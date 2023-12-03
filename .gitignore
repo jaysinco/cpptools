@@ -1,0 +1,4 @@
+/.config.old
+/.build
+/toolchain
+*.log
