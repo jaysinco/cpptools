@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $SCRIPT_DIR/../../env.sh
-SOURCE_DIR=spdlog-1.12.0
+SOURCE_DIR=libiconv-1.16
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -29,16 +29,14 @@ mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
 && \
-cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
-    -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
-    -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-    -DBUILD_SHARED_LIBS=ON \
-    -DSPDLOG_BUILD_EXAMPLE=OFF \
-    -DSPDLOG_BUILD_TESTS=OFF \
-    -DSPDLOG_FMT_EXTERNAL=ON \
+../src/$SOURCE_DIR/configure \
+    --with-sysroot=$TC_SYSROOT \
+    --prefix $TC_INSTALL_DIR \
+    --host=$TC_COMPILER_TUPLE \
+    --build=$TC_HOST_COMPILER_TUPLE \
+    --enable-shared \
+    --disable-static \
 && \
-cmake --build . --parallel=`nproc` \
+make -j`nproc` \
 && \
-cmake --install .
+make install

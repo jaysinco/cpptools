@@ -9,4 +9,5 @@ echo "start!" \
 && $SCRIPT_DIR/catch2/build.sh -c \
 && $SCRIPT_DIR/fmt/build.sh -c \
 && $SCRIPT_DIR/spdlog/build.sh -c \
+&& $SCRIPT_DIR/libiconv/build.sh -c \
 && echo "done!"

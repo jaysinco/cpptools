@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $SCRIPT_DIR/../../env.sh
-SOURCE_DIR=spdlog-1.12.0
+SOURCE_DIR=Catch2-3.4.0
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -35,9 +35,8 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBUILD_SHARED_LIBS=ON \
-    -DSPDLOG_BUILD_EXAMPLE=OFF \
-    -DSPDLOG_BUILD_TESTS=OFF \
-    -DSPDLOG_FMT_EXTERNAL=ON \
+    -DBUILD_TESTING=OFF \
+    -DCATCH_INSTALL_DOCS=OFF \
 && \
 cmake --build . --parallel=`nproc` \
 && \
