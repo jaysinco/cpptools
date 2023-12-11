@@ -2,7 +2,7 @@
 
 set -e
 
-do_pkg_all=0
+do_clean=0
 do_arch=x86_64
 do_pkg_list=()
 
@@ -13,20 +13,20 @@ while [[ $# -gt 0 ]]; do
             echo "Usage: build.sh [options] [target] ..."
             echo
             echo "Build Options:"
-            echo "  -a         build all targets"
-            echo "  -t ARCH    build toolchain, default 'x86_64'"
+            echo "  -c         remove build files"
+            echo "  -a ARCH    toolchain arch, default 'x86_64'"
             echo "  -h         print command line options"
             echo
             exit 0
             ;;
-         -a) do_pkg_all=1 && shift ;;
-         -t) do_arch=$2 && shift && shift ;;
+         -c) do_clean=1 && shift ;;
+         -a) do_arch=$2 && shift && shift ;;
          -*) echo "Unknown option: $1" && exit 1 ;;
           *) do_pkg_list+=($1) && shift ;;
     esac
 done
 
-if [ $do_pkg_all -eq 1 ]; then
+if [ ${#do_pkg_list[@]} -eq 0 ]; then
     do_pkg_list=(
         "zlib"
         "zstd"
@@ -39,8 +39,23 @@ if [ $do_pkg_all -eq 1 ]; then
     )
 fi
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-export TC_TOOLCHAIN_DIR=$SCRIPT_DIR/../toolchain/$do_arch
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+export TC_TOOLCHAIN_DIR=$script_dir/../toolchain/$do_arch
+
+if [ $do_clean -eq 1 ]; then
+    for pkg in "${do_pkg_list[@]}"
+    do
+        pkg_dir=$script_dir/$pkg
+        if [ ! -d "$pkg_dir" ]; then
+            echo "'$pkg' target not found!"
+            exit 1
+        fi
+
+        rm -rf $pkg_dir/src
+        rm -rf $pkg_dir/out
+    done
+    exit 0
+fi
 
 if [ ! -d "$TC_TOOLCHAIN_DIR" ]; then
     echo "'$do_arch' toolchain not found!"
@@ -50,14 +65,14 @@ fi
 echo "$do_arch start" && \
 for pkg in "${do_pkg_list[@]}"
 do
-    pkg_script=$SCRIPT_DIR/$pkg/build.sh
-    if [ ! -f "$pkg_script" ]; then
+    pkg_dir=$script_dir/$pkg
+    if [ ! -d "$pkg_dir" ]; then
         echo "'$pkg' target not found!"
         exit 1
     fi
 
     echo "$pkg start"
-    $pkg_script -c || exit 1
+    $pkg_dir/build.sh -c || exit 1
     echo "$pkg done"
 done \
 && echo "$do_arch done"
