@@ -12,7 +12,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-source $SCRIPT_DIR/../../env.sh
+source $TC_TOOLCHAIN_DIR/env.sh
 SOURCE_DIR=openssl-1.1.1w
 
 if [ $do_clean -eq 1 ]; then
@@ -33,7 +33,7 @@ mkdir -p $SCRIPT_DIR/out \
 pushd $SCRIPT_DIR/out \
 && \
 ../src/$SOURCE_DIR/Configure \
-    linux-x86_64 \   #  linux-aarch64
+    linux-$TC_ARCH \
     --prefix=$TC_INSTALL_DIR \
     --sysroot=$TC_SYSROOT \
     --release \
