@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $SCRIPT_DIR/../../env.sh
-SOURCE_DIR=Catch2-3.4.0
+SOURCE_DIR=openssl-1.1.1w
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -25,19 +25,25 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
+export CC=$TC_COMPILER_CC
+export CXX=$TC_COMPILER_CXX
+
 mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
 && \
-cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
-    -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
-    -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-    -DBUILD_SHARED_LIBS=ON \
-    -DBUILD_TESTING=OFF \
-    -DCATCH_INSTALL_DOCS=OFF \
+../src/$SOURCE_DIR/Configure \
+    linux-x86_64 \   #  linux-aarch64
+    --prefix=$TC_INSTALL_DIR \
+    --sysroot=$TC_SYSROOT \
+    --release \
+    shared \
+    zlib \
+    no-tests \
+    no-unit-test \
+    threads \
+    -fPIC \
 && \
-cmake --build . --parallel=`nproc` \
+make -j`nproc` \
 && \
-cmake --install .
+make install_sw
