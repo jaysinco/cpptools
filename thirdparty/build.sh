@@ -35,7 +35,12 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "catch2"
         "fmt"
         "spdlog"
+        "gflags"
+        "gtest"
+        "glog"
         "curl"
+        "libcpr"
+        "boost"
     )
 fi
 
