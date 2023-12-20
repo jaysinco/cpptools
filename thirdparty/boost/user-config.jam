@@ -1,0 +1,5 @@
+import os ;
+local CXX_COMPILER = [ os.environ TC_COMPILER_CXX ] ;
+local CXX_SYSROOT = [ os.environ TC_SYSROOT ] ;
+
+using gcc : ct : $(CXX_COMPILER) --sysroot=$(CXX_SYSROOT) ;

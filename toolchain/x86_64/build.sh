@@ -11,7 +11,7 @@ while [[ $# -gt 0 ]]; do
             echo "Usage: build.sh [options]"
             echo
             echo "Build Options:"
-            echo "  -c         remove build files"
+            echo "  -c         remove build files then exit"
             echo "  -h         print command line options"
             echo
             exit 0

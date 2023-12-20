@@ -13,7 +13,7 @@ while [[ $# -gt 0 ]]; do
             echo "Usage: build.sh [options] [target] ..."
             echo
             echo "Build Options:"
-            echo "  -c         remove build files"
+            echo "  -c         remove build files then exit"
             echo "  -a ARCH    toolchain arch, default 'x86_64'"
             echo "  -h         print command line options"
             echo
