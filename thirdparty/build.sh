@@ -50,6 +50,8 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "opencl-headers"
         "sqlite3"
         "xxd"
+        "libjpeg"
+        "libyuv"
     )
 fi
 
