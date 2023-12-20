@@ -41,6 +41,8 @@ make default \
     WITH_LIBUV=1 \
     -j`nproc` \
 && \
-cp src/libusockets.h $TC_INSTALL_DIR/include \
+mkdir -p $TC_INSTALL_DIR/include/usockets \
 && \
-cp uSockets.a $TC_INSTALL_DIR/lib/libuSockets.a
+cp src/libusockets.h $TC_INSTALL_DIR/include/usockets \
+&& \
+cp uSockets.a $TC_INSTALL_DIR/lib/libusockets.a
