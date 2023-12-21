@@ -76,6 +76,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "thread-pool"
         "concurrent-queue"
         "opencl-headers"
+        "opencl-clhpp"
         "sqlite3"
         "xxd"
     )

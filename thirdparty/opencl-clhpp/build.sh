@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=OpenCL-Headers-2023.12.14
+SOURCE_DIR=OpenCL-CLHPP-2023.12.14
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -29,4 +29,4 @@ pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 && \
 mkdir -p $TC_INSTALL_DIR/include/CL \
 && \
-cp CL/* $TC_INSTALL_DIR/include/CL
+cp include/CL/* $TC_INSTALL_DIR/include/CL
