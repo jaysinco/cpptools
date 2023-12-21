@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=mesa-23.3.1
+SOURCE_DIR=wayland-protocols-1.32
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -25,27 +25,11 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xf $TC_SOURCE_REPO/$SOURCE_DIR.tar.xz -C $SCRIPT_DIR/src
 fi
 
-if [ ! -f "/usr/bin/glslangValidator" ]; then
-    echo "-- install glslang-tools"
-    sudo apt-get install glslang-tools
-fi
-
-if [ ! -f "/usr/bin/llvm-config" ]; then
-    echo "-- install llvm-dev"
-    sudo apt-get install llvm-dev
-fi
-
-if ! grep -q Mako <<< `pip3 list`; then
-    echo "-- install mako"
-    pip3 install Mako -i https://pypi.tuna.tsinghua.edu.cn/simple --break-system-packages
-fi
-
 pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 && \
 meson setup $SCRIPT_DIR/out \
     --prefix=$TC_INSTALL_DIR \
     --cross-file $TC_MESON_CROSSFILE \
-    -Dplatforms=x11,wayland \
 && \
 meson compile -C $SCRIPT_DIR/out \
 && \
