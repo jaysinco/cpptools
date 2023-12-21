@@ -25,15 +25,15 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xf $TC_SOURCE_REPO/$SOURCE_DIR.tar.xz -C $SCRIPT_DIR/src
 fi
 
-if [ ! -f "/usr/bin/glslangValidator" ]; then
-    echo "-- install glslang-tools"
-    sudo apt-get install glslang-tools
-fi
+# if [ ! -f "/usr/bin/glslangValidator" ]; then
+#     echo "-- install glslang-tools"
+#     sudo apt-get install glslang-tools
+# fi
 
-if [ ! -f "/usr/bin/llvm-config" ]; then
-    echo "-- install llvm-dev"
-    sudo apt-get install llvm-dev
-fi
+# if [ ! -f "/usr/bin/llvm-config" ]; then
+#     echo "-- install llvm-dev"
+#     sudo apt-get install llvm-dev
+# fi
 
 if ! grep -q Mako <<< `pip3 list`; then
     echo "-- install mako"
@@ -47,8 +47,10 @@ meson setup $SCRIPT_DIR/out \
     --cross-file $TC_MESON_CROSSFILE \
     -Dbuildtype=release \
     -Dplatforms=x11,wayland \
-    -Dgallium-drivers=swrast \
+    -Ddri-drivers=nouveau \
+    -Dgallium-drivers= \
     -Dvulkan-drivers= \
+    -Degl=enabled \
 && \
 meson compile -C $SCRIPT_DIR/out \
 && \

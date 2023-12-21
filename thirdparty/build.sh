@@ -36,6 +36,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "openssl"
         "libffi"
         "libxml"
+        "expat"
         "wayland-protocols"
         "wayland"
         "xproto"
@@ -56,6 +57,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "libpciaccess"
         "libdrm"
         "mesa"
+
         "libjpeg"
         "libyuv"
         "boost"
