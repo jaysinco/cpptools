@@ -36,6 +36,7 @@ pushd $SCRIPT_DIR/out \
     --build=$TC_HOST_COMPILER_TUPLE \
     --enable-shared \
     --disable-static \
+    --disable-tests \
 && \
 make -j`nproc` \
 && \
