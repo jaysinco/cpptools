@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=libxcb-1.16
+SOURCE_DIR=libXrender-0.9.11
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -24,8 +24,6 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
     tar -xf $TC_SOURCE_REPO/$SOURCE_DIR.tar.xz -C $SCRIPT_DIR/src
 fi
-
-export PKG_CONFIG_PATH=$TC_INSTALL_DIR/share/pkgconfig
 
 mkdir -p $SCRIPT_DIR/out \
 && \
@@ -38,9 +36,8 @@ pushd $SCRIPT_DIR/out \
     --build=$TC_HOST_COMPILER_TUPLE \
     --enable-shared \
     --disable-static \
+    --enable-malloc0returnsnull \
 && \
 make -j`nproc` \
 && \
-make install \
-&& \
-rm -f $TC_INSTALL_DIR/lib/libxcb*.la
+make install

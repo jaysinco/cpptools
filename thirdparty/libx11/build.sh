@@ -40,4 +40,6 @@ pushd $SCRIPT_DIR/out \
 && \
 make -j`nproc` \
 && \
-make install
+make install \
+&& \
+rm -f $TC_INSTALL_DIR/lib/libX11*.la
