@@ -30,6 +30,7 @@ pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 meson setup $SCRIPT_DIR/out \
     --prefix=$TC_INSTALL_DIR \
     --cross-file $TC_MESON_CROSSFILE \
+    -Dbuildtype=release \
     -Ddocumentation=false \
     -Dscanner=false \
 && \

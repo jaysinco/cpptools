@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=mesa-23.3.1
+SOURCE_DIR=mesa-20.3.5
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -45,7 +45,10 @@ pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 meson setup $SCRIPT_DIR/out \
     --prefix=$TC_INSTALL_DIR \
     --cross-file $TC_MESON_CROSSFILE \
+    -Dbuildtype=release \
     -Dplatforms=x11,wayland \
+    -Dgallium-drivers=swrast \
+    -Dvulkan-drivers= \
 && \
 meson compile -C $SCRIPT_DIR/out \
 && \

@@ -28,16 +28,16 @@ done
 
 if [ ${#do_pkg_list[@]} -eq 0 ]; then
     do_pkg_list=(
+        "libunwind"
         "zlib"
         "zstd"
         "xz"
         "libiconv"
         "openssl"
-        "libdrm"
         "libffi"
         "libxml"
-        "wayland"
         "wayland-protocols"
+        "wayland"
         "xproto"
         "xtrans"
         "kbproto"
@@ -52,6 +52,9 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "libxxf86vm"
         "libxrender"
         "libxrandr"
+        "libxdamage"
+        "libpciaccess"
+        "libdrm"
         "mesa"
         "libjpeg"
         "libyuv"

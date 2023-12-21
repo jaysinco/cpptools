@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=wayland-protocols-1.32
+SOURCE_DIR=libunwind-1.7.2
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -22,16 +22,21 @@ fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
-    tar -xf $TC_SOURCE_REPO/$SOURCE_DIR.tar.xz -C $SCRIPT_DIR/src
+    tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
-pushd $SCRIPT_DIR/src/$SOURCE_DIR \
+mkdir -p $SCRIPT_DIR/out \
 && \
-meson setup $SCRIPT_DIR/out \
-    --prefix=$TC_INSTALL_DIR \
-    --cross-file $TC_MESON_CROSSFILE \
-    -Dbuildtype=release \
+pushd $SCRIPT_DIR/out \
 && \
-meson compile -C $SCRIPT_DIR/out \
+../src/$SOURCE_DIR/configure \
+    --with-sysroot=$TC_SYSROOT \
+    --prefix $TC_INSTALL_DIR \
+    --host=$TC_COMPILER_TUPLE \
+    --build=$TC_HOST_COMPILER_TUPLE \
+    --enable-shared \
+    --disable-static \
 && \
-meson install -C $SCRIPT_DIR/out
+make -j`nproc` \
+&& \
+make install
