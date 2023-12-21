@@ -52,6 +52,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "xxd"
         "libjpeg"
         "libyuv"
+        "libdrm"
     )
 fi
 
