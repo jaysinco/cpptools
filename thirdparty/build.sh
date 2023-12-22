@@ -57,7 +57,8 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "libpciaccess"
         "libdrm"
         "mesa"
-
+        "libxkbcommon"
+        "glfw"
         "libjpeg"
         "libpng"
         "libwebp"
