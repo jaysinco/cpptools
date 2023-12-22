@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=libpng-1.6.40
+SOURCE_DIR=libwebp-1.3.2
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -35,7 +35,6 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBUILD_SHARED_LIBS=ON \
-    -DPNG_TESTS=OFF \
 && \
 cmake --build . --parallel=`nproc` \
 && \

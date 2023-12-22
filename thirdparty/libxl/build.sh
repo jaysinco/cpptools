@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=libpng-1.6.40
+SOURCE_DIR=libxl-4.0.3
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -21,8 +21,10 @@ if [ $do_clean -eq 1 ]; then
 fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
-    mkdir -p $SCRIPT_DIR/src
-    tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
+    mkdir -p $SCRIPT_DIR/src/$SOURCE_DIR
+    tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src/$SOURCE_DIR
+    cd $SCRIPT_DIR/src/$SOURCE_DIR
+    patch -p0 --binary < ../../patches/0001-fix-string-include.patch
 fi
 
 mkdir -p $SCRIPT_DIR/out \
@@ -35,7 +37,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBUILD_SHARED_LIBS=ON \
-    -DPNG_TESTS=OFF \
+    -DLIBXL_SHARED=1 \
 && \
 cmake --build . --parallel=`nproc` \
 && \

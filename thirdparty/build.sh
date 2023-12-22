@@ -59,6 +59,9 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "mesa"
 
         "libjpeg"
+        "libpng"
+        "libwebp"
+        "libtiff"
         "libyuv"
         "boost"
         "libuv"
@@ -78,6 +81,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "opencl-headers"
         "opencl-clhpp"
         "sqlite3"
+        "libxl"
         "xxd"
     )
 fi
