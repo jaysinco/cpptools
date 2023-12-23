@@ -81,6 +81,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "concurrent-queue"
         "opencl-headers"
         "opencl-clhpp"
+        "ocl-icd"
         "sqlite3"
         "libxl"
         "xxd"
