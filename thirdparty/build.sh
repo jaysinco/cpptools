@@ -58,6 +58,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "libdrm"
         "mesa"
         "libxkbcommon"
+        "imgui"
         "glfw"
         "libjpeg"
         "libpng"
