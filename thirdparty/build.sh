@@ -86,6 +86,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "sqlite3"
         "libxl"
         "xxd"
+        "coremark"
     )
 fi
 
