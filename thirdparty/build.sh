@@ -87,6 +87,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "libxl"
         "xxd"
         "coremark"
+        "llama-cpp"
     )
 fi
 
