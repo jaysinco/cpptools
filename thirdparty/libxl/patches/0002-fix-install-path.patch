@@ -1,0 +1,11 @@
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -57,7 +57,7 @@
+   RUNTIME DESTINATION bin)
+ 
+ # Only install the C++ headers
+-INSTALL(FILES ${PUBLIC_CPP_HEADERS} DESTINATION include)
++INSTALL(FILES ${PUBLIC_CPP_HEADERS} DESTINATION include/libxl)
+ 
+ IF(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+ 

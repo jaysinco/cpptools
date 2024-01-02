@@ -29,9 +29,14 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src/$SOURCE_DIR
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src/$SOURCE_DIR
     cd $SCRIPT_DIR/src/$SOURCE_DIR
+
     todos ../../patches/0001-fix-string-include.patch
     patch -p0 --binary < ../../patches/0001-fix-string-include.patch
     fromdos ../../patches/0001-fix-string-include.patch
+
+    todos ../../patches/0002-fix-install-path.patch
+    patch -p0 --binary < ../../patches/0002-fix-install-path.patch
+    fromdos ../../patches/0002-fix-install-path.patch
 fi
 
 mkdir -p $SCRIPT_DIR/out \
