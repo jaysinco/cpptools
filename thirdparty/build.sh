@@ -88,6 +88,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "yaml-cpp"
         "opencc"
         "leveldb"
+        "librime"
         "libxl"
         "xxd"
         "coremark"
