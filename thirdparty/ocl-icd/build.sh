@@ -27,7 +27,7 @@ fi
 
 if [ ! -f "/usr/bin/ruby" ]; then
     echo "-- install ruby"
-    sudo apt-get install ruby
+    sudo apt-get -y install ruby
 fi
 
 mkdir -p $SCRIPT_DIR/out \

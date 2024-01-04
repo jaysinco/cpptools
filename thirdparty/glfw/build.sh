@@ -27,7 +27,7 @@ fi
 
 if [ ! -f "/usr/share/ECM/cmake/ECMConfig.cmake" ]; then
     echo "-- install ecm"
-    sudo apt-get install extra-cmake-modules
+    sudo apt-get -y install extra-cmake-modules
 fi
 
 mkdir -p $SCRIPT_DIR/out \

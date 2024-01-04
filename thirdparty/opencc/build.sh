@@ -27,7 +27,7 @@ fi
 
 if [ ! -f "/usr/bin/opencc_dict" ]; then
     echo "-- install opencc"
-    sudo apt-get install opencc
+    sudo apt-get -y install opencc
 fi
 
 mkdir -p $SCRIPT_DIR/out \

@@ -27,7 +27,7 @@ fi
 
 if [ ! -f "/usr/bin/tclsh" ]; then
     echo "-- install tclsh"
-    sudo apt-get install tclsh
+    sudo apt-get -y install tclsh
 fi
 
 mkdir -p $SCRIPT_DIR/out \

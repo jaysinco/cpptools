@@ -22,7 +22,7 @@ fi
 
 if [ ! -f "/usr/bin/todos" ]; then
     echo "-- install tofrodos"
-    sudo apt-get install tofrodos
+    sudo apt-get -y install tofrodos
 fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
