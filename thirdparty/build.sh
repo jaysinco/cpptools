@@ -64,6 +64,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "libpng"
         "libwebp"
         "libtiff"
+        "openjpeg"
         "libyuv"
         "boost"
         "libuv"

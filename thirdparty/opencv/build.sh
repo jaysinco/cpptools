@@ -28,7 +28,7 @@ fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_CONTRIB_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
-    tar -xzvf $TC_SOURCE_REPO/$SOURCE_CONTRIB_DIR.tar.gz -C $SCRIPT_DIR/src
+    tar -xzf $TC_SOURCE_REPO/$SOURCE_CONTRIB_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
 mkdir -p $SCRIPT_DIR/out \
@@ -56,11 +56,16 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DBUILD_opencv_python_bindings_g=OFF \
     -DBUILD_opencv_python_tests=OFF \
     -DBUILD_opencv_ts=OFF \
+    -DBUILD_opencv_wechat_qrcode=OFF \
+    -DBUILD_opencv_xfeatures2d=OFF \
+    -DBUILD_opencv_face=OFF \
     -DOPENCV_FORCE_3RDPARTY_BUILD=OFF \
     -DOPENCV_PYTHON_SKIP_DETECTION=OFF \
     -DOPENCV_MODULES_PUBLIC="opencv" \
     -DOPENCV_EXTRA_MODULES_PATH=$SCRIPT_DIR/src/$SOURCE_CONTRIB_DIR/modules \
     -DENABLE_PIC=ON \
+    -DWITH_ADE=OFF \
+    -DWITH_IPP=OFF \
 && \
 cmake --build . --parallel=`nproc` \
 && \
