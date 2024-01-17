@@ -96,6 +96,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "dcmtk"
         "tinyxml2"
         "sdl"
+        "ffmpeg"
         "opencv"
         "libxl"
         "xxd"
