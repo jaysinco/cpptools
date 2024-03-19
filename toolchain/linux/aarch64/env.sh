@@ -2,11 +2,11 @@
 
 set -e
 
-TC_ARCH=x86_64
+TC_ARCH=aarch64
 TC_HOST_ARCH=`arch`
 
 TC_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-TC_ROOT_DIR=$TC_SCRIPT_DIR/../..
+TC_ROOT_DIR=$TC_SCRIPT_DIR/../../..
 TC_SOURCE_REPO=$TC_ROOT_DIR/src
 TC_HOST_COMPILER_TUPLE=$TC_HOST_ARCH-linux-gnu
 TC_COMPILER_TUPLE=$TC_ARCH-unknown-linux-gnu
