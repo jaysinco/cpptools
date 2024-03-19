@@ -106,7 +106,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
 fi
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-export TC_TOOLCHAIN_DIR=$script_dir/../toolchain/$do_arch
+export TC_TOOLCHAIN_DIR=$script_dir/../$do_arch
 
 if [ $do_clean -eq 1 ]; then
     for pkg in "${do_pkg_list[@]}"
