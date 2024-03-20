@@ -22,7 +22,7 @@ fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
-    MSYS=winsymlinks:lnk tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
+    unzip $TC_SOURCE_REPO/$SOURCE_DIR.zip -d $SCRIPT_DIR/src
 fi
 
 mkdir -p $SCRIPT_DIR/out \
