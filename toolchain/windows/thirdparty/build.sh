@@ -30,6 +30,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
     do_pkg_list=(
         "zlib"
         "zstd"
+        "libiconv"
     )
 fi
 

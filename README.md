@@ -14,3 +14,7 @@
     make install
     export PATH="${PATH}:/some/place/bin"
     ```
+
+# Windows
+* install MSYS2
+* run `set-msys.sh`
