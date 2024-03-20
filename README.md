@@ -1,4 +1,6 @@
 # Linux
+## requirement
+* devos
 ## install crosstool-ng
 * https://github.com/crosstool-ng/crosstool-ng/tree/master/testing/docker
     ```
@@ -16,5 +18,12 @@
     ```
 
 # Windows
-* install MSYS2
+## requirement
+* Visual Studio
+* MSYS2
 * run `set-msys.sh`
+* Git Portable
+* cmake
+* ninja
+* Strawberry Perl Portable
+* nasm
