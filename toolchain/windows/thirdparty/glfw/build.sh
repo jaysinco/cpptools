@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=openssl-1.1.1w
+SOURCE_DIR=glfw-3.3.9
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -25,26 +25,21 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
-perl_path=`which -a perl | grep strawberry`
-echo "using perl from $perl_path"
-
 mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
 && \
-$perl_path $SCRIPT_DIR/src/$SOURCE_DIR/Configure \
-    VC-WIN64A \
-    shared \
-    --prefix=$TC_INSTALL_DIR \
-    --openssldir=$TC_INSTALL_DIR \
-    no-unit-test \
-    threads \
-    no-tests \
-    --release \
-    zlib-dynamic \
-    --with-zlib-include="$TC_INSTALL_DIR/include" \
-    --with-zlib-lib="$TC_INSTALL_DIR/lib/zlib.lib" \
+cmake ../src/$SOURCE_DIR -G "Ninja" \
+    -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
+    -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
+    -DCMAKE_FIND_ROOT_PATH=$TC_INSTALL_DIR \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreadedDLL" \
+    -DBUILD_SHARED_LIBS=ON \
+    -DGLFW_BUILD_EXAMPLES=ON \
+    -DGLFW_BUILD_TESTS=OFF \
+    -DGLFW_BUILD_DOCS=OFF \
 && \
-nmake \
+cmake --build . --parallel=`nproc` \
 && \
-nmake install_sw
+cmake --install .

@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=zstd-1.5.5
+SOURCE_DIR=libjpeg-turbo-2.1.5.1
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -22,25 +22,29 @@ fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
-    unzip $TC_SOURCE_REPO/$SOURCE_DIR.zip -d $SCRIPT_DIR/src
+    tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
 mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
 && \
-cmake ../src/$SOURCE_DIR/build/cmake -G "Ninja" \
+cmake ../src/$SOURCE_DIR -G "Ninja" \
     -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
     -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
     -DCMAKE_FIND_ROOT_PATH=$TC_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreadedDLL" \
     -DBUILD_SHARED_LIBS=ON \
-    -DBUILD_TESTING=OFF \
-    -DZSTD_BUILD_PROGRAMS=OFF \
-    -DZSTD_BUILD_SHARED=ON \
-    -DZSTD_BUILD_STATIC=OFF \
-    -DZSTD_MULTITHREAD_SUPPORT=ON \
+    -DWITH_SIMD=ON \
+    -DWITH_ARITH_ENC=ON \
+    -DWITH_ARITH_DEC=ON \
+    -DWITH_JPEG7=ON \
+    -DWITH_JPEG8=ON \
+    -DWITH_MEM_SRCDST=ON \
+    -DWITH_TURBOJPEG=ON \
+    -DWITH_JAVA=OFF \
+    -DWITH_12BIT=OFF \
 && \
 cmake --build . --parallel=`nproc` \
 && \

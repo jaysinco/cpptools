@@ -32,6 +32,13 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "zstd"
         "libiconv"
         "openssl"
+        "imgui"
+        "glfw"
+        "libjpeg"
+        "libpng"
+        "libwebp"
+        "libtiff"
+        "openjpeg"
     )
 fi
 

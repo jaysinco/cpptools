@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=openssl-1.1.1w
+SOURCE_DIR=imgui-1.89.9
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -25,26 +25,10 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
-perl_path=`which -a perl | grep strawberry`
-echo "using perl from $perl_path"
-
-mkdir -p $SCRIPT_DIR/out \
+pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 && \
-pushd $SCRIPT_DIR/out \
+mkdir -p $TC_INSTALL_DIR/src/imgui \
 && \
-$perl_path $SCRIPT_DIR/src/$SOURCE_DIR/Configure \
-    VC-WIN64A \
-    shared \
-    --prefix=$TC_INSTALL_DIR \
-    --openssldir=$TC_INSTALL_DIR \
-    no-unit-test \
-    threads \
-    no-tests \
-    --release \
-    zlib-dynamic \
-    --with-zlib-include="$TC_INSTALL_DIR/include" \
-    --with-zlib-lib="$TC_INSTALL_DIR/lib/zlib.lib" \
+cp *.h *.cpp $TC_INSTALL_DIR/src/imgui \
 && \
-nmake \
-&& \
-nmake install_sw
+cp -r backends $TC_INSTALL_DIR/src/imgui
