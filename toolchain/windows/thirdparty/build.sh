@@ -39,6 +39,23 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "libwebp"
         "libtiff"
         "openjpeg"
+        "boost"
+        "catch2"
+
+        "fmt"
+        "spdlog"
+        "gflags"
+        "gtest"
+        "glog"
+        "nlohmann-json"
+        "thread-pool"
+        "concurrent-queue"
+        "sqlite3"
+        "marisa-trie"
+        "yaml-cpp"
+        "opencc"
+        "leveldb"
+        "librime"
     )
 fi
 
