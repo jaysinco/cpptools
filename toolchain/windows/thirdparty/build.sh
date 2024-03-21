@@ -41,12 +41,12 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "openjpeg"
         "boost"
         "catch2"
-
         "fmt"
         "spdlog"
         "gflags"
         "gtest"
         "glog"
+
         "nlohmann-json"
         "thread-pool"
         "concurrent-queue"
