@@ -35,11 +35,12 @@ mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
 && \
-cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
+cmake ../src/$SOURCE_DIR -G "Ninja" \
     -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
     -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
+    -DCMAKE_FIND_ROOT_PATH=$TC_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+    -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreadedDLL" \
     -DBUILD_SHARED_LIBS=ON \
     -DBUILD_DOCS=OFF \
     -DBUILD_EXAMPLES=OFF \
@@ -47,6 +48,12 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DBUILD_PACKAGE=OFF \
     -DBUILD_PERF_TESTS=OFF \
     -DBUILD_USE_SYMLINKS=OFF \
+    -DBUILD_ZLIB=OFF \
+    -DBUILD_TIFF=OFF \
+    -DBUILD_JPEG=OFF \
+    -DBUILD_PNG=OFF \
+    -DBUILD_WEBP=OFF \
+    -DBUILD_OPENJPEG=OFF \
     -DBUILD_opencv_apps=ON \
     -DBUILD_opencv_java=OFF \
     -DBUILD_opencv_java_bindings_gen=OFF \
@@ -63,9 +70,12 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DOPENCV_PYTHON_SKIP_DETECTION=ON \
     -DOPENCV_MODULES_PUBLIC="opencv" \
     -DOPENCV_EXTRA_MODULES_PATH=$SCRIPT_DIR/src/$SOURCE_CONTRIB_DIR/modules \
+    -DOPENCV_INSTALL_BINARIES_PREFIX= \
     -DENABLE_PIC=ON \
     -DWITH_ADE=OFF \
     -DWITH_IPP=OFF \
+    -DWITH_FFMPEG=OFF \
+    -DWEBP_LIBRARY="$TC_INSTALL_DIR/lib/libwebp.lib" \
 && \
 cmake --build . --parallel=`nproc` \
 && \

@@ -49,9 +49,11 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "nlohmann-json"
         "thread-pool"
         "concurrent-queue"
+        "sqlite3"
         "yaml-cpp"
         "leveldb"
         "tinyxml2"
+        "opencv"
     )
 fi
 

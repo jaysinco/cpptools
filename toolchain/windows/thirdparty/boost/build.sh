@@ -50,4 +50,6 @@ fi \
     --debug-configuration \
     --build-dir=$SCRIPT_DIR/out \
     --prefix=$TC_INSTALL_DIR \
-    install
+    install \
+&& \
+mv $TC_INSTALL_DIR/lib/boost_*.dll $TC_INSTALL_DIR/bin
