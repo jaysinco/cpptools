@@ -46,16 +46,12 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "gflags"
         "gtest"
         "glog"
-
         "nlohmann-json"
         "thread-pool"
         "concurrent-queue"
-        "sqlite3"
-        "marisa-trie"
         "yaml-cpp"
-        "opencc"
         "leveldb"
-        "librime"
+        "tinyxml2"
     )
 fi
 
