@@ -25,6 +25,7 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
+vc_path=$(dirname "$(which cl)")
 perl_path=`which -a perl | grep strawberry`
 echo "using perl from $perl_path"
 
@@ -43,8 +44,8 @@ $perl_path $SCRIPT_DIR/src/$SOURCE_DIR/Configure \
     --release \
     zlib-dynamic \
     --with-zlib-include="$TC_INSTALL_DIR/include" \
-    --with-zlib-lib="$TC_INSTALL_DIR/lib/zlib.lib" \
+    --with-zlib-lib="$TC_INSTALL_DIR/bin/zlib1.dll" \
 && \
-nmake \
+PATH="$vc_path:$PATH" nmake \
 && \
-nmake install_sw
+PATH="$vc_path:$PATH" nmake install_sw

@@ -7,6 +7,6 @@ target_include_directories(${TARGET_NAME} INTERFACE
 )
 
 target_link_libraries(${TARGET_NAME} INTERFACE
-    ${TC_INSTALL_DIR}/lib/ssl.lib
-    ${TC_INSTALL_DIR}/lib/crypto.lib
+    ${TC_INSTALL_DIR}/lib/libssl.lib
+    ${TC_INSTALL_DIR}/lib/libcrypto.lib
 )
