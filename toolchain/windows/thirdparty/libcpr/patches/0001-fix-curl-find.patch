@@ -1,0 +1,11 @@
+--- CMakeLists.txt	2023-10-14 20:45:47.000000000 +0800
++++ "CMakeLists copy.txt"	2024-03-23 22:43:21.098373300 +0800
+@@ -178,7 +178,7 @@
+ # Curl configuration
+ if(CPR_USE_SYSTEM_CURL)
+     if(CPR_ENABLE_SSL)
+-        find_package(CURL COMPONENTS HTTP HTTPS)
++        find_package(CURL)
+         if(CURL_FOUND)
+             message(STATUS "Curl ${CURL_VERSION_STRING} found on this system.")
+             # To be able to load certificates under Windows when using OpenSSL:
