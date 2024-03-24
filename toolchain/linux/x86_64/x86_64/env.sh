@@ -3,7 +3,7 @@
 set -e
 
 TC_SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-TC_ROOT_DIR=$TC_SCRIPT_DIR/../../..
+TC_ROOT_DIR=$TC_SCRIPT_DIR/../../../..
 TC_SOURCE_REPO=$TC_ROOT_DIR/src
 TC_HOST_COMPILER_TUPLE=x86_64-linux-gnu
 TC_COMPILER_TUPLE=x86_64-unknown-linux-gnu
@@ -20,4 +20,4 @@ export TC_COMPILER_CC=$TC_COMPILER_CC
 export TC_COMPILER_CXX=$TC_COMPILER_CXX
 export TC_SYSROOT=$TC_SYSROOT
 export TC_INSTALL_DIR=$TC_SYSROOT/usr
-export TC_THIRDPARTY=$TC_SCRIPT_DIR/../thirdparty
+export TC_THIRDPARTY=$TC_SCRIPT_DIR/thirdparty
