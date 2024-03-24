@@ -3,7 +3,6 @@
 set -e
 
 do_clean=0
-do_arch=x86_64
 do_pkg_list=()
 
 while [[ $# -gt 0 ]]; do
@@ -14,13 +13,11 @@ while [[ $# -gt 0 ]]; do
             echo
             echo "Build Options:"
             echo "  -c         remove build files then exit"
-            echo "  -a ARCH    toolchain arch, default 'x86_64'"
             echo "  -h         print command line options"
             echo
             exit 0
             ;;
          -c) do_clean=1 && shift ;;
-         -a) do_arch=$2 && shift && shift ;;
          -*) echo "Unknown option: $1" && exit 1 ;;
           *) do_pkg_list+=($1) && shift ;;
     esac
@@ -63,7 +60,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
 fi
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-export TC_TOOLCHAIN_DIR=$script_dir/../$do_arch
+export TC_TOOLCHAIN_DIR=$script_dir/..
 
 if [ $do_clean -eq 1 ]; then
     for pkg in "${do_pkg_list[@]}"
@@ -80,12 +77,7 @@ if [ $do_clean -eq 1 ]; then
     exit 0
 fi
 
-if [ ! -d "$TC_TOOLCHAIN_DIR" ]; then
-    echo "'$do_arch' toolchain not found!"
-    exit 1
-fi
-
-echo "$do_arch start" && \
+echo "start" && \
 for pkg in "${do_pkg_list[@]}"
 do
     pkg_dir=$script_dir/$pkg
@@ -98,4 +90,4 @@ do
     $pkg_dir/build.sh -c || exit 1
     echo "$pkg done"
 done \
-&& echo "$do_arch done"
+&& echo "done"

@@ -27,14 +27,6 @@ fi
 
 export BOOST_BUILD_PATH=$SCRIPT_DIR
 
-if [ $TC_ARCH = "x86_64" ]; then
-    BUILD_OPT_ARCH="x86"
-    BUILD_OPT_ABI="sysv"
-else
-    BUILD_OPT_ARCH="arm"
-    BUILD_OPT_ABI="aapcs"
-fi
-
 pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 && \
 ./bootstrap.sh --without-libraries=python \
@@ -43,12 +35,12 @@ pushd $SCRIPT_DIR/src/$SOURCE_DIR \
     variant=release \
     runtime-link=shared \
     link=shared \
-    architecture=$BUILD_OPT_ARCH \
+    architecture=arm \
     address-model=64 \
     toolset=gcc-ct \
     threading=multi \
     binary-format=elf \
-    abi=$BUILD_OPT_ABI \
+    abi=aapcs \
     stdlib=gnu11 \
     define=_GLIBCXX_USE_CXX11_ABI=1 \
     cxxflags="-fPIC" \

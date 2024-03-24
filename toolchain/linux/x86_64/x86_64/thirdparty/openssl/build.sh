@@ -33,7 +33,7 @@ mkdir -p $SCRIPT_DIR/out \
 pushd $SCRIPT_DIR/out \
 && \
 ../src/$SOURCE_DIR/Configure \
-    linux-$TC_ARCH \
+    linux-x86_64 \
     --prefix=$TC_INSTALL_DIR \
     --sysroot=$TC_SYSROOT \
     --release \

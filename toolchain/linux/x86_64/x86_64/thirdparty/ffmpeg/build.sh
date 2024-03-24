@@ -33,7 +33,7 @@ pushd $SCRIPT_DIR/out \
     --sysroot=$TC_SYSROOT \
     --prefix=$TC_INSTALL_DIR \
     --cross-prefix=$TC_COMPILER_BINDIR/$TC_COMPILER_TUPLE- \
-    --arch=$TC_ARCH \
+    --arch=x86_64 \
     --target-os=linux \
     --enable-cross-compile \
     --enable-runtime-cpudetect \

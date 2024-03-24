@@ -25,12 +25,6 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
-if [ $TC_ARCH = "x86_64" ]; then
-    BUILD_OPT_NATIVE_CODE="enable"
-else
-    BUILD_OPT_NATIVE_CODE="disable"
-fi
-
 pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 && \
 autoreconf -i \
@@ -42,7 +36,7 @@ autoreconf -i \
     --build=$TC_HOST_COMPILER_TUPLE \
     --enable-shared \
     --disable-static \
-    --$BUILD_OPT_NATIVE_CODE-native-code \
+    --enable-native-code \
 && \
 make -j`nproc` \
 && \
