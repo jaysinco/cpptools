@@ -56,6 +56,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "leveldb"
         "tinyxml2"
         "opencv"
+        "xxd"
     )
 fi
 
