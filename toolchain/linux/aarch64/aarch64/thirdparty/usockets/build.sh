@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=libpng-1.6.40
+SOURCE_DIR=uSockets-0.8.6
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -25,19 +25,18 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
-mkdir -p $SCRIPT_DIR/out \
+pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 && \
-pushd $SCRIPT_DIR/out \
+make default \
+    CFLAGS="-fPIC -I$TC_INSTALL_DIR/include" \
+    CXXFLAGS="-fPIC -I$TC_INSTALL_DIR/include" \
+    LDFLAGS="" \
+    WITH_OPENSSL=1 \
+    WITH_LIBUV=1 \
+    -j`nproc` \
 && \
-cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
-    -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
-    -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
-    -DCMAKE_FIND_ROOT_PATH=$TC_INSTALL_DIR \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-    -DBUILD_SHARED_LIBS=ON \
-    -DPNG_TESTS=OFF \
+mkdir -p $TC_INSTALL_DIR/include/usockets \
 && \
-cmake --build . --parallel=`nproc` \
+cp src/libusockets.h $TC_INSTALL_DIR/include/usockets \
 && \
-cmake --install .
+cp uSockets.a $TC_INSTALL_DIR/lib/libusockets.a

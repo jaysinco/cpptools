@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=libjpeg-turbo-2.1.5.1
+SOURCE_DIR=curl-7.88.1
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -22,7 +22,7 @@ fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
-    tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
+    tar -xf $TC_SOURCE_REPO/$SOURCE_DIR.tar.xz -C $SCRIPT_DIR/src
 fi
 
 mkdir -p $SCRIPT_DIR/out \
@@ -36,15 +36,26 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBUILD_SHARED_LIBS=ON \
-    -DWITH_SIMD=ON \
-    -DWITH_ARITH_ENC=ON \
-    -DWITH_ARITH_DEC=ON \
-    -DWITH_JPEG7=ON \
-    -DWITH_JPEG8=ON \
-    -DWITH_MEM_SRCDST=ON \
-    -DWITH_TURBOJPEG=ON \
-    -DWITH_JAVA=OFF \
-    -DWITH_12BIT=OFF \
+    -DBUILD_TESTING=OFF \
+    -DBUILD_CURL_EXE=ON \
+    -DCURL_DISABLE_LDAP=ON \
+    -DCURL_STATICLIB=OFF \
+    -DCURL_USE_SCHANNEL=OFF \
+    -DCURL_USE_OPENSSL=ON \
+    -DCURL_USE_WOLFSSL=OFF \
+    -DUSE_NGHTTP2=OFF \
+    -DCURL_ZLIB=ON \
+    -DCURL_BROTLI=OFF \
+    -DCURL_ZSTD=ON \
+    -DCURL_USE_LIBSSH2=OFF \
+    -DENABLE_ARES=OFF \
+    -DCURL_DISABLE_PROXY=OFF \
+    -DCURL_DISABLE_RTSP=OFF \
+    -DCURL_DISABLE_CRYPTO_AUTH=OFF \
+    -DCURL_DISABLE_VERBOSE_STRINGS=OFF \
+    -DNTLM_WB_ENABLED=ON \
+    -DCURL_CA_BUNDLE=none \
+    -DCURL_CA_PATH=none \
 && \
 cmake --build . --parallel=`nproc` \
 && \

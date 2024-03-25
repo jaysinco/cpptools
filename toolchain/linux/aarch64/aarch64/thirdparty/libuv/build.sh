@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=libjpeg-turbo-2.1.5.1
+SOURCE_DIR=libuv-1.47.0
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -36,15 +36,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBUILD_SHARED_LIBS=ON \
-    -DWITH_SIMD=ON \
-    -DWITH_ARITH_ENC=ON \
-    -DWITH_ARITH_DEC=ON \
-    -DWITH_JPEG7=ON \
-    -DWITH_JPEG8=ON \
-    -DWITH_MEM_SRCDST=ON \
-    -DWITH_TURBOJPEG=ON \
-    -DWITH_JAVA=OFF \
-    -DWITH_12BIT=OFF \
+    -DLIBUV_BUILD_TESTS=OFF \
 && \
 cmake --build . --parallel=`nproc` \
 && \

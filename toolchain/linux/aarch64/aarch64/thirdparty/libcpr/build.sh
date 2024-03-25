@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=libjpeg-turbo-2.1.5.1
+SOURCE_DIR=cpr-1.10.5
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -36,15 +36,16 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBUILD_SHARED_LIBS=ON \
-    -DWITH_SIMD=ON \
-    -DWITH_ARITH_ENC=ON \
-    -DWITH_ARITH_DEC=ON \
-    -DWITH_JPEG7=ON \
-    -DWITH_JPEG8=ON \
-    -DWITH_MEM_SRCDST=ON \
-    -DWITH_TURBOJPEG=ON \
-    -DWITH_JAVA=OFF \
-    -DWITH_12BIT=OFF \
+    -DCPR_USE_SYSTEM_CURL=ON \
+    -DCPR_BUILD_TESTS=OFF \
+    -DCPR_GENERATE_COVERAGE=OFF \
+    -DCPR_USE_SYSTEM_GTEST=ON \
+    -DCPR_CURL_NOSIGNAL=OFF \
+    -DCPR_FORCE_DARWINSSL_BACKEND=OFF \
+    -DCPR_FORCE_OPENSSL_BACKEND=ON \
+    -DCPR_FORCE_WINSSL_BACKEND=OFF \
+    -DCMAKE_USE_OPENSSL=ON \
+    -DCPR_ENABLE_SSL=ON \
 && \
 cmake --build . --parallel=`nproc` \
 && \
