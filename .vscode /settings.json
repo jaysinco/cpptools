@@ -4,6 +4,6 @@
         "toolchain/*/*/*/sysroot": true,
         "toolchain/*/*/*/crosstool/.build": true,
         "toolchain/*/*/*/thirdparty/*/out": true,
-        "toolchain/*/*/*/thirdparty/*/bin": true
+        "toolchain/*/*/*/thirdparty/*/src": true
     }
 }

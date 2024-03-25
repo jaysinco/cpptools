@@ -30,7 +30,6 @@ mkdir -p $SCRIPT_DIR/out \
 pushd $SCRIPT_DIR/out \
 && \
 ../src/$SOURCE_DIR/configure \
-    --with-sysroot=$TC_SYSROOT \
     --prefix $TC_INSTALL_DIR \
     --enable-shared \
     --disable-static \

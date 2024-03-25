@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=xz-5.4.5
+SOURCE_DIR=tiff-4.5.1
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -22,18 +22,23 @@ fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
-    tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
+    tar -xf $TC_SOURCE_REPO/$SOURCE_DIR.tar.xz -C $SCRIPT_DIR/src
 fi
 
 mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
 && \
-../src/$SOURCE_DIR/configure \
-    --prefix $TC_INSTALL_DIR \
-    --enable-shared \
-    --disable-static \
+cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
+    -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
+    -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
+    -DCMAKE_FIND_ROOT_PATH=$TC_INSTALL_DIR \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+    -DBUILD_SHARED_LIBS=ON \
+    -Dzlib=ON \
+    -Djpeg=ON \
 && \
-make -j`nproc` \
+cmake --build . --parallel=`nproc` \
 && \
-make install
+cmake --install .

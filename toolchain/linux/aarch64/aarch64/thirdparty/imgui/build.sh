@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=xz-5.4.5
+SOURCE_DIR=imgui-1.89.9
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -25,15 +25,10 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
-mkdir -p $SCRIPT_DIR/out \
+pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 && \
-pushd $SCRIPT_DIR/out \
+mkdir -p $TC_INSTALL_DIR/src/imgui \
 && \
-../src/$SOURCE_DIR/configure \
-    --prefix $TC_INSTALL_DIR \
-    --enable-shared \
-    --disable-static \
+cp *.h *.cpp $TC_INSTALL_DIR/src/imgui \
 && \
-make -j`nproc` \
-&& \
-make install
+cp -r backends $TC_INSTALL_DIR/src/imgui

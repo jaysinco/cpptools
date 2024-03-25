@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=xz-5.4.5
+SOURCE_DIR=openssl-1.1.1w
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -29,11 +29,17 @@ mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
 && \
-../src/$SOURCE_DIR/configure \
-    --prefix $TC_INSTALL_DIR \
-    --enable-shared \
-    --disable-static \
+../src/$SOURCE_DIR/Configure \
+    linux-aarch64 \
+    --prefix=$TC_INSTALL_DIR \
+    --release \
+    shared \
+    zlib \
+    no-tests \
+    no-unit-test \
+    threads \
+    -fPIC \
 && \
 make -j`nproc` \
 && \
-make install
+make install_sw
