@@ -30,7 +30,8 @@ mkdir -p $SCRIPT_DIR/out \
 pushd $SCRIPT_DIR/out \
 && \
 cmake ../src/xxd-main -G "Ninja" \
-    -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
+    -DCMAKE_C_COMPILER=cl \
+    -DCMAKE_CXX_COMPILER=cl \
     -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
     -DCMAKE_FIND_ROOT_PATH=$TC_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
