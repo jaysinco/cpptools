@@ -23,7 +23,7 @@ done
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-pushd $script_dir/crosstool
+pushd $script_dir
 ct-ng clean
 if [ $do_clean -eq 1 ]; then
     exit 0
