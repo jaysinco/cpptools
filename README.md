@@ -2,7 +2,7 @@
 ## requirement
 * install package
 ```
-apt-get install -y build-essential ninja-build
+apt-get install -y build-essential ninja-build automake
 ```
 ## install crosstool-ng
 * https://github.com/crosstool-ng/crosstool-ng/tree/master/testing/docker
