@@ -30,7 +30,8 @@ mkdir -p $SCRIPT_DIR/out \
 pushd $SCRIPT_DIR/out \
 && \
 cmake ../src/$SOURCE_DIR/build/cmake -G "Unix Makefiles" \
-    -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
+    -DCMAKE_C_COMPILER=gcc \
+    -DCMAKE_CXX_COMPILER=g++ \
     -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
     -DCMAKE_FIND_ROOT_PATH=$TC_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
