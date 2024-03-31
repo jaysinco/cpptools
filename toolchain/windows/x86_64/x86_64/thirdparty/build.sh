@@ -57,7 +57,8 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "tinyxml2"
         "opencv"
         "xxd"
-        "llama-cpp"
+        # "llama-cpp"
+        # "pbrt"
     )
 fi
 

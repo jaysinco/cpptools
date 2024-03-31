@@ -22,7 +22,7 @@ fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
-    unzip $TC_SOURCE_REPO/$SOURCE_DIR.zip -d $SCRIPT_DIR/src
+    unzip -q $TC_SOURCE_REPO/$SOURCE_DIR.zip -d $SCRIPT_DIR/src
     cd $SCRIPT_DIR/src/xxd-main
     patch < ../../patches/0001-fix-cmake-install.patch
 fi
