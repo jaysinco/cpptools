@@ -45,4 +45,6 @@ cmake --build . --parallel=`nproc` \
 && \
 cp ./compile_commands.json ../src/$SOURCE_DIR \
 && \
+cp $SCRIPT_DIR/patches/.clangd ../src/$SOURCE_DIR \
+&& \
 cp ./pbrt $TC_INSTALL_DIR/bin
