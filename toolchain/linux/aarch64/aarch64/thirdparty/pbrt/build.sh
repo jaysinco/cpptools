@@ -29,17 +29,17 @@ mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
 && \
-cmake ../src/$SOURCE_DIR -G "Ninja" \
-    -DCMAKE_C_COMPILER=cl \
-    -DCMAKE_CXX_COMPILER=cl \
+cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
+    -DCMAKE_C_COMPILER=gcc \
+    -DCMAKE_CXX_COMPILER=g++ \
     -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
     -DCMAKE_FIND_ROOT_PATH=$TC_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreadedDLL" \
+    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBUILD_SHARED_LIBS=OFF \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
-    -DCMAKE_CUDA_COMPILER="C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.4/bin/nvcc.exe" \
-    -DPBRT_OPTIX7_PATH="C:/ProgramData/NVIDIA Corporation/OptiX SDK 7.3.0" \
+    -DCMAKE_CUDA_COMPILER="/usr/local/cuda/bin/nvcc" \
+    -DPBRT_OPTIX7_PATH="/opt/nvidia/NVIDIA-OptiX-SDK-7.3.0-linux64-aarch64" \
 && \
 cmake --build . --parallel=`nproc` \
 && \

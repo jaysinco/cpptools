@@ -32,11 +32,13 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "libiconv"
         "openssl"
         "imgui"
+        "glfw"
         "libjpeg"
         "libpng"
         "libwebp"
         "libtiff"
         "openjpeg"
+        "openexr"
         "boost"
         "libuv"
         "usockets"
@@ -65,6 +67,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "opencv"
         "xxd"
         # "llama-cpp"
+        # "pbrt"
     )
 fi
 
