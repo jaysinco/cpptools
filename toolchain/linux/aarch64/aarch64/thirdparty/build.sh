@@ -66,8 +66,6 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "ffmpeg"
         "opencv"
         "xxd"
-        # "llama-cpp"
-        # "pbrt"
     )
 fi
 
