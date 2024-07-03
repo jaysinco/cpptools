@@ -1,0 +1,59 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.iconTheme": "vscode-icons",
+    "window.newWindowDimensions": "offset",
+    "editor.fontFamily": "'Hack Nerd Font Mono'",
+    "editor.fontWeight": 500,
+    "editor.fontLigatures": false,
+    "editor.fontSize": 15,
+    "editor.formatOnSave": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.stickyScroll.enabled": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.insertFinalNewline": false,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "terminal.external.windowsExec": "%USERPROFILE%/ProgramFiles/Microsoft.WindowsTerminal/WindowsTerminal.exe",
+    "terminal.integrated.profiles.windows": {
+        "MSYS2 Bash": {
+            "path": [
+                "C:/msys64/msys2_shell.cmd"
+            ],
+            "args": [
+                "-defterm",
+                "-here",
+                "-no-start",
+                "-mingw64",
+                "-use-full-path"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "MSYS2 Bash",
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.fontFamily": "'CaskaydiaMono Nerd Font'",
+    "terminal.integrated.fontSize": 15,
+    "explorer.confirmDelete": false,
+    "explorer.autoReveal": false,
+    "extensions.ignoreRecommendations": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.enabled": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "C_Cpp.autoAddFileAssociations": false,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "dart.enableSdkFormatter": false,
+    "git.autofetch": false,
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "always",
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "python.formatting.provider": "none",
+    "clangd.arguments": [
+        "--completion-style=detailed",
+        "--function-arg-placeholders=0",
+        "--header-insertion=never"
+    ],
+    "[markdown]": {
+        "editor.wordWrap": "off"
+    }
+}
