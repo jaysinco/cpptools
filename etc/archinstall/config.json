@@ -4,7 +4,7 @@
     "audio_config": {
         "audio": "pulseaudio"
     },
-    "bootloader": "Systemd-boot",
+    "bootloader": "grub",
     "config_version": "2.6.0",
     "debug": true,
     "disk_encryption": null,
