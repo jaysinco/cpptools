@@ -7,9 +7,6 @@
     "bootloader": "Systemd-boot",
     "config_version": "2.6.0",
     "debug": true,
-    "disk_config": {
-        "config_type": "default_layout"
-    },
     "disk_encryption": null,
     "hostname": "archlinux",
     "kernels": [
