@@ -23,26 +23,24 @@
         "sys_lang": "en_US"
     },
     "mirror_config": {
-        "custom_mirrors": [],
-        "mirror_regions": {
-            "China": [
-                "https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.xjtu.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.wsyu.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.shanghaitech.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.qvq.net.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.qlu.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.nju.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.jxust.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.jlu.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch",
-                "https://mirrors.aliyun.com/archlinux/$repo/os/$arch",
-                "https://mirror.nyist.edu.cn/archlinux/$repo/os/$arch"
-            ]
-        }
+        "custom_mirrors": [
+            "https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.xjtu.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.wsyu.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.shanghaitech.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.qvq.net.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.qlu.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.nju.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.jxust.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.jlu.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch",
+            "https://mirrors.aliyun.com/archlinux/$repo/os/$arch",
+            "https://mirror.nyist.edu.cn/archlinux/$repo/os/$arch"
+        ],
+        "mirror_regions": {}
     },
     "network_config": {
         "type": "nm"
@@ -70,11 +68,12 @@
         "qemu-base",
         "qemu-emulators-full"
     ],
-    "parallel downloads": 0,
+    "parallel downloads": 5,
     "profile_config": null,
     "save_config": null,
     "script": "guided",
     "silent": false,
+    "skip_version_check": true,
     "swap": true,
     "timezone": "Asia/Shanghai",
     "version": "2.6.0"
