@@ -1,85 +1,15 @@
 {
-    "__separator__": null,
     "additional-repositories": [],
     "archinstall-language": "English",
     "audio_config": {
-        "audio": "pipewire"
+        "audio": "pulseaudio"
     },
-    "bootloader": "Systemd-boot",
+    "bootloader": "grub",
     "config_version": "2.6.0",
     "debug": true,
     "disk_config": {
-        "config_type": "default_layout",
-        "device_modifications": [
-            {
-                "device": "/dev/sda",
-                "partitions": [
-                    {
-                        "btrfs": [],
-                        "flags": [
-                            "Boot"
-                        ],
-                        "fs_type": "fat32",
-                        "size": {
-                            "sector_size": null,
-                            "unit": "MiB",
-                            "value": 512
-                        },
-                        "mount_options": [],
-                        "mountpoint": "/boot",
-                        "obj_id": "2c3fa2d5-2c79-4fab-86ec-22d0ea1543c0",
-                        "start": {
-                            "sector_size": null,
-                            "unit": "MiB",
-                            "value": 1
-                        },
-                        "status": "create",
-                        "type": "primary"
-                    },
-                    {
-                        "btrfs": [],
-                        "flags": [],
-                        "fs_type": "ext4",
-                        "size": {
-                            "sector_size": null,
-                            "unit": "GiB",
-                            "value": 20
-                        },
-                        "mount_options": [],
-                        "mountpoint": "/",
-                        "obj_id": "3e7018a0-363b-4d05-ab83-8e82d13db208",
-                        "start": {
-                            "sector_size": null,
-                            "unit": "MiB",
-                            "value": 513
-                        },
-                        "status": "create",
-                        "type": "primary"
-                    },
-                    {
-                        "btrfs": [],
-                        "flags": [],
-                        "fs_type": "ext4",
-                        "size": {
-                            "sector_size": null,
-                            "unit": "Percent",
-                            "value": 100
-                        },
-                        "mount_options": [],
-                        "mountpoint": "/home",
-                        "obj_id": "ce58b139-f041-4a06-94da-1f8bad775d3f",
-                        "start": {
-                            "sector_size": null,
-                            "unit": "GiB",
-                            "value": 20
-                        },
-                        "status": "create",
-                        "type": "primary"
-                    }
-                ],
-                "wipe": true
-            }
-        ]
+        "config_type": "pre_mounted_config",
+        "mountpoint": "/mnt"
     },
     "disk_encryption": null,
     "hostname": "archlinux",
@@ -110,7 +40,7 @@
                 "https://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch",
                 "https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch",
                 "https://mirrors.aliyun.com/archlinux/$repo/os/$arch",
-                "https://mirror.nyist.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirror.nyist.edu.cn/archlinux/$repo/os/$arch"
             ]
         }
     },
@@ -120,7 +50,26 @@
     "no_pkg_lookups": false,
     "ntp": true,
     "offline": false,
-    "packages": [],
+    "packages": [
+        "xfce4",
+        "xfce4-pulseaudio-plugin",
+        "gvfs",
+        "base-devel",
+        "openssh",
+        "clash",
+        "ttf-hack-nerd",
+        "ttf-cascadia-mono-nerd",
+        "fish",
+        "ibus",
+        "ibus-rime",
+        "neofetch",
+        "rclone",
+        "tmux",
+        "nnn",
+        "ripgrep",
+        "qemu-base",
+        "qemu-emulators-full"
+    ],
     "parallel downloads": 0,
     "profile_config": null,
     "save_config": null,
