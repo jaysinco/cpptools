@@ -69,6 +69,10 @@
         "nnn",
         "net-tools",
         "ripgrep",
+        "fzf",
+        "fd",
+        "lazygit",
+        "croc",
         "crosstool-ng",
         "qemu-base",
         "qemu-emulators-full"
