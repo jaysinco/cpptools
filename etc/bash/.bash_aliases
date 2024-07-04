@@ -1,0 +1,2 @@
+alias n="nnn -de"
+
