@@ -21,6 +21,7 @@ cp -rf $git_root/etc/fish/proxy.fish $HOME/opt/
 mkdir -p $HOME/.config/Code/User/
 cp -rf $git_root/etc/vscode/*.json $HOME/.config/Code/User/
 
+# makepkg -si
 if [ ! -d "$HOME/opt/microsoft-edge-stable-bin" ]; then
     git clone \
         https://aur.archlinux.org/microsoft-edge-stable-bin.git \
