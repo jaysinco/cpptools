@@ -16,7 +16,7 @@ export QT_IM_MODULE=ibus
 export NNN_OPTS="H"
 
 export EDITOR=/usr/bin/code
-export PATH=$PATH:/home/sinco/opt:/home/sinco/opt/flutter-elinux/bin
+export PATH=$PATH:$HOME/opt:$HOME/opt/flutter-elinux/bin
 
 if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
 then

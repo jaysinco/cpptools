@@ -12,7 +12,6 @@
     "kernels": [
         "linux"
     ],
-    "custom-commands": [],
     "locale_config": {
         "kb_layout": "us",
         "sys_enc": "UTF-8",
@@ -68,6 +67,7 @@
         "rclone",
         "tmux",
         "nnn",
+        "net-tools",
         "ripgrep",
         "crosstool-ng",
         "qemu-base",
@@ -81,5 +81,8 @@
     "skip_version_check": true,
     "swap": true,
     "timezone": "Asia/Shanghai",
+    "custom-commands": [
+        "systemctl enable sshd"
+    ],
     "version": "2.6.0"
 }

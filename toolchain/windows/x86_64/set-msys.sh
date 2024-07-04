@@ -12,6 +12,7 @@ git config --global fetch.prune true
 
 pacman_need_sync=0
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+git_root="$(git rev-parse --show-toplevel)"
 
 function modify_mirror() {
     if [ "$(head -n 1 $1)" != "$2" ]; then
@@ -31,7 +32,7 @@ if [ $pacman_need_sync -eq 1 ]; then pacman --noconfirm -Sy; fi
 
 if [ ! -f "/etc/profile.d/git-prompt.sh" ]; then
     echo "copy git-prompt.sh"
-    cp $script_dir/git-prompt.sh /etc/profile.d/
+    cp $git_root/etc/msys/git-prompt.sh /etc/profile.d/
 fi
 
 s1='shopt -q login_shell || . /etc/profile.d/git-prompt.sh'
