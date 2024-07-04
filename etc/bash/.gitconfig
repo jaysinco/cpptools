@@ -1,5 +1,14 @@
 [user]
 	name = jaysinco
 	email = jaysinco@163.com
+[core]
+	autocrlf = input
+	safecrlf = true
+	longpaths = true
+	quotepath = false
+[i18n]
+	filesEncoding = utf-8
 [pull]
 	rebase = false
+[fetch]
+	prune = true

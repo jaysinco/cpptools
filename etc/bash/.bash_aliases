@@ -1,2 +1,1 @@
 alias n="nnn -de"
-
