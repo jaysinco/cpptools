@@ -21,6 +21,9 @@ cp -rf $git_root/etc/fish/proxy.fish $HOME/opt/
 mkdir -p $HOME/.config/Code/User/
 cp -rf $git_root/etc/vscode/*.json $HOME/.config/Code/User/
 
+mkdir -p $HOME/.config/ibus/rime/
+cp -rf $git_root/etc/rime/*.yaml $HOME/.config/ibus/rime/
+
 # makepkg -si
 if [ ! -d "$HOME/opt/microsoft-edge-stable-bin" ]; then
     git clone \
