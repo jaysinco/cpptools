@@ -8,7 +8,6 @@ etc_dir=$git_root/etc
 src_dir=$git_root/src
 
 mkdir -p $HOME/tmp
-mkdir -p $HOME/sw/sinco
 mkdir -p $HOME/opt
 
 cp -rf $etc_dir/bash/.* $HOME/
@@ -50,6 +49,22 @@ if [ ! -f "/usr/bin/ct-ng" ]; then
     popd
     rm -rf $HOME/crosstool-ng-1.26.0
 fi
+
+function clone_repo() {
+    mkdir -p "$1"
+    cd "$1"
+    if [ ! -d "$1/.git" ]; then
+        echo "-- git clone $2 -b $3" \
+        && git init \
+        && git remote add origin git@gitee.com:$2 \
+        && git fetch \
+        && git checkout $3 -b $4 \
+        && git remote add backup git@github.com:$2
+    fi
+}
+
+clone_repo $HOME/sw/sinco/cpptools jaysinco/cpptools.git origin/master master
+clone_repo $HOME/sw/sinco/atlas jaysinco/atlas.git origin/master master
 
 if [ ! -d "$HOME/opt/microsoft-edge-stable-bin" ]; then
     echo "-- install edge"
