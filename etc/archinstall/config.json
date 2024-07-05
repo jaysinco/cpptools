@@ -51,6 +51,7 @@
         "xfce4-pulseaudio-plugin",
         "gvfs",
         "clang",
+        "cmake",
         "git",
         "git-lfs",
         "base-devel",
