@@ -73,6 +73,7 @@
         "fd",
         "lazygit",
         "croc",
+        "crosstool-ng",
         "qemu-base",
         "qemu-emulators-full"
     ],
