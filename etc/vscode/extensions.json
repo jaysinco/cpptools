@@ -1,16 +1,16 @@
 {
     "recommendations": [
+        "vscode-icons-team.vscode-icons",
         "gurumukhi.selected-lines-count",
         "jeff-hykin.better-cpp-syntax",
-        "jeff-hykin.better-shellscript-syntax",
         "llvm-vs-code-extensions.vscode-clangd",
         "ms-vscode.cpptools",
         "ms-vscode.hexeditor",
         "twxs.cmake",
         "waderyan.gitblame",
+        "jeff-hykin.better-shellscript-syntax",
         "ms-vscode-remote.remote-ssh",
         "ms-vscode-remote.remote-ssh-edit",
-        "ms-vscode.remote-explorer",
-        "vscode-icons-team.vscode-icons"
+        "ms-vscode.remote-explorer"
     ]
 }
