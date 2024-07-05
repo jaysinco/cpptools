@@ -25,8 +25,6 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xf $TC_SOURCE_REPO/$SOURCE_DIR.tar.xz -C $SCRIPT_DIR/src
 fi
 
-export PKG_CONFIG_PATH=$TC_INSTALL_DIR/share/pkgconfig
-
 mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
