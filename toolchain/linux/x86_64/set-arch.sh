@@ -7,6 +7,9 @@ git_root="$(git rev-parse --show-toplevel)"
 etc_dir=$git_root/etc
 src_dir=$git_root/src
 
+jq -r ".packages[]" $etc_dir/archinstall/config.json | \
+    xargs sudo pacman -S --needed
+
 mkdir -p $HOME/tmp
 mkdir -p $HOME/opt
 

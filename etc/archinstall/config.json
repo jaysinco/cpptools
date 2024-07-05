@@ -52,6 +52,7 @@
         "gvfs",
         "clang",
         "cmake",
+        "jq",
         "git",
         "git-lfs",
         "base-devel",
