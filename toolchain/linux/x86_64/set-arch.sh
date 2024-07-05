@@ -12,7 +12,7 @@ mkdir -p $HOME/sw/sinco
 mkdir -p $HOME/opt
 
 cp -rf $etc_dir/bash/.* $HOME/
-cp -rf $etc_dirgit/.gitconfig $HOME/
+cp -rf $etc_dir/git/.gitconfig $HOME/
 cp -rf $etc_dir/tmux/.tmux.conf $HOME/
 cp -rf $etc_dir/xinit/.xinitrc $HOME/
 
@@ -24,7 +24,7 @@ mkdir -p $HOME/.config/Code/User/
 cp -rf $etc_dir/vscode/*.json $HOME/.config/Code/User/
 
 mkdir -p $HOME/.config/ibus/rime/
-cp -rf $etc_dirrime/*.yaml $HOME/.config/ibus/rime/
+cp -rf $etc_dir/rime/*.yaml $HOME/.config/ibus/rime/
 
 if [ ! -f "$HOME/.ssh/id_rsa" ]; then
     echo "-- install ssh key"
@@ -35,7 +35,7 @@ if [ ! -f "$HOME/.ssh/id_rsa" ]; then
     chmod 644 $HOME/.ssh/id_rsa.pub
 fi
 
-if [ ! -f "$HOME/.config/clash/Country.mmdb" ]; then
+if [ ! -f "$HOME/.config/clash/config.yaml" ]; then
     echo "-- install clash config"
     mkdir -p $HOME/.config/clash
     cp -rf $src_dir/clash.yaml $HOME/.config/clash/config.yaml
