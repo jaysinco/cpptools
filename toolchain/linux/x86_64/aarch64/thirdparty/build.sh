@@ -90,13 +90,13 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "fftw"
         "eigen"
         "libsndfile"
-        "dcmtk"
+        # "dcmtk"
         "tinyxml2"
-        "sdl"
+        # "sdl"
         "ffmpeg"
         "opencv"
         # "libxl"
-        # "xxd"
+        "xxd"
     )
 fi
 

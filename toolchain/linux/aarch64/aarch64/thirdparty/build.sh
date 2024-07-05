@@ -61,7 +61,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "yaml-cpp"
         "leveldb"
         "libsndfile"
-        "dcmtk"
+        # "dcmtk"
         "tinyxml2"
         "ffmpeg"
         "opencv"
