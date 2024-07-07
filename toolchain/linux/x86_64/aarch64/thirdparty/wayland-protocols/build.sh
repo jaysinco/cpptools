@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=wayland-protocols-1.32
+SOURCE_DIR=wayland-protocols-1.36
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src

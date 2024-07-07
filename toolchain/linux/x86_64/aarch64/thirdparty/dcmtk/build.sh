@@ -53,6 +53,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DHAVE_STL_TYPE_TRAITS_TEST_RESULT=1 \
     -DHAVE_STL_TUPLE_TEST_RESULT=1 \
     -DHAVE_STL_SYSTEM_ERROR_TEST_RESULT=1 \
+    -DDCMTK_WITH_TIFF=OFF \
 && \
 cp ../patches/arith.h ./config/include/dcmtk/config/ \
 && \
