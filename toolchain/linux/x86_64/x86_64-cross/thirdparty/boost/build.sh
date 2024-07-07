@@ -29,7 +29,9 @@ export BOOST_BUILD_PATH=$SCRIPT_DIR
 
 pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 && \
-./bootstrap.sh --without-libraries=python \
+./bootstrap.sh \
+    --without-libraries=python \
+    --without-icu \
 && \
 ./b2 \
     variant=release \

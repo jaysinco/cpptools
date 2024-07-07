@@ -37,7 +37,7 @@ fi
 
 if ! grep -q Mako <<< `pip3 list`; then
     echo "-- install mako"
-    pip3 install Mako -i https://pypi.tuna.tsinghua.edu.cn/simple --break-system-packages
+    pip3 install Mako setuptools -i https://pypi.tuna.tsinghua.edu.cn/simple --break-system-packages
 fi
 
 pushd $SCRIPT_DIR/src/$SOURCE_DIR \

@@ -26,7 +26,7 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     cd $SCRIPT_DIR/src/$SOURCE_DIR
     patch -p0 --binary < ../../patches/0001-fix-string-include.patch
     patch -p0 --binary < ../../patches/0002-fix-install-path.patch
- fi
+fi
 
 mkdir -p $SCRIPT_DIR/out \
 && \

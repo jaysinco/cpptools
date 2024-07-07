@@ -32,7 +32,6 @@ meson setup $SCRIPT_DIR/out \
     --cross-file $TC_MESON_CROSSFILE \
     -Dbuildtype=release \
     -Denable-docs=false \
-    -Denable-wayland=false \
 && \
 meson compile -C $SCRIPT_DIR/out \
 && \

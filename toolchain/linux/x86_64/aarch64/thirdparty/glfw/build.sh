@@ -44,6 +44,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DGLFW_BUILD_EXAMPLES=ON \
     -DGLFW_BUILD_TESTS=OFF \
     -DGLFW_BUILD_DOCS=OFF \
+    -DGLFW_USE_WAYLAND=ON \
 && \
 cmake --build . --parallel=`nproc` \
 && \
