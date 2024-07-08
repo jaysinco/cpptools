@@ -2,6 +2,8 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.iconTheme": "vscode-icons",
     "window.newWindowDimensions": "offset",
+    "window.menuBarVisibility": "hidden",
+    "window.titleBarStyle": "custom",
     "editor.fontFamily": "'Hack Nerd Font Mono'",
     "editor.fontWeight": 500,
     "editor.fontLigatures": false,
