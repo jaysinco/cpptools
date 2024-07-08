@@ -32,6 +32,7 @@
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "terminal.integrated.fontFamily": "'CaskaydiaMono Nerd Font'",
     "terminal.integrated.fontSize": 15,
+    "explorer.compactFolders": false,
     "explorer.confirmDelete": false,
     "explorer.autoReveal": false,
     "extensions.ignoreRecommendations": true,
