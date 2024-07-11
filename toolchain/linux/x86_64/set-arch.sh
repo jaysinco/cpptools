@@ -66,7 +66,7 @@ if [ ! -d "$HOME/opt/microsoft-edge-stable-bin" ]; then
         https://aur.archlinux.org/microsoft-edge-stable-bin.git \
         $HOME/opt/microsoft-edge-stable-bin \
     && pushd $HOME/opt/microsoft-edge-stable-bin \
-    && makepkg -si
+    && makepkg -si --noconfirm
 fi
 
 if [ ! -d "$HOME/opt/visual-studio-code-bin" ]; then
@@ -75,5 +75,5 @@ if [ ! -d "$HOME/opt/visual-studio-code-bin" ]; then
         https://aur.archlinux.org/visual-studio-code-bin.git \
         $HOME/opt/visual-studio-code-bin \
     && pushd $HOME/opt/visual-studio-code-bin \
-    && makepkg -si
+    && makepkg -si --noconfirm
 fi
