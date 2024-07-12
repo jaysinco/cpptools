@@ -97,6 +97,8 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "opencv"
         "libxl"
         "xxd"
+        "libnl3"
+        "libpcap"
     )
 fi
 
