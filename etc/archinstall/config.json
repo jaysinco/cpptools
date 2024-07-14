@@ -79,7 +79,6 @@
         "fd",
         "lazygit",
         "croc",
-        "crosstool-ng",
         "tcl",
         "extra-cmake-modules",
         "qemu-base",

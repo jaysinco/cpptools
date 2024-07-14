@@ -44,6 +44,15 @@ if [ ! -f "$HOME/.config/clash/config.yaml" ]; then
     cp -rf $src_dir/Country.mmdb $HOME/.config/clash/
 fi
 
+if [ ! -f "/usr/bin/ct-ng" ]; then
+    echo "-- install crosstool-ng"
+    tar xf $src_dir/crosstool-ng-1.26.0.tar.xz --directory=$HOME
+    pushd $HOME/crosstool-ng-1.26.0
+    ./configure --prefix=/usr && make && sudo make install
+    popd
+    rm -rf $HOME/crosstool-ng-1.26.0
+fi
+
 function clone_repo() {
     mkdir -p "$1"
     cd "$1"
