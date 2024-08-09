@@ -47,10 +47,6 @@
     "git.autofetch": false,
     "git.confirmSync": false,
     "git.openRepositoryInParentFolders": "always",
-    "gitlens.currentLine.enabled": false,
-    "gitlens.codeLens.authors.enabled": false,
-    "gitlens.codeLens.recentChange.enabled": false,
-    "python.formatting.provider": "none",
     "clangd.arguments": [
         "--completion-style=detailed",
         "--function-arg-placeholders=0",
@@ -58,5 +54,8 @@
     ],
     "[markdown]": {
         "editor.wordWrap": "off"
-    }
+    },
+    "MATLAB.indexWorkspace": false,
+    "MATLAB.matlabConnectionTiming": "never",
+    "MATLAB.telemetry": false
 }
