@@ -57,5 +57,6 @@
     },
     "MATLAB.indexWorkspace": false,
     "MATLAB.matlabConnectionTiming": "never",
-    "MATLAB.telemetry": false
+    "MATLAB.telemetry": false,
+    "scm.showHistoryGraph": false
 }
