@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=libcap-2.66
+SOURCE_DIR=FTXUI-5.0.0
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -22,20 +22,20 @@ fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
-    tar -xf $TC_SOURCE_REPO/$SOURCE_DIR.tar.xz -C $SCRIPT_DIR/src
+    tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
-
-export BUILD_CC=$TC_COMPILER_CC
-export DESTDIR=$TC_INSTALL_DIR
-export SHARED="yes"
-export PTHREADS="yes"
-export prefix="/"
-export lib="lib"
 
 mkdir -p $SCRIPT_DIR/out \
 && \
-pushd $SCRIPT_DIR/src/$SOURCE_DIR/libcap \
+pushd $SCRIPT_DIR/out \
 && \
-make CC=$TC_COMPILER_CC -j`nproc` \
+cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
+    -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
+    -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+    -DBUILD_SHARED_LIBS=ON \
 && \
-make install-shared-cap
+cmake --build . --parallel=`nproc` \
+&& \
+cmake --install .

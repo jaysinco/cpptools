@@ -58,6 +58,7 @@
         "ruby",
         "python",
         "python-pip",
+        "python-jinja",
         "base-devel",
         "openssh",
         "clash",
