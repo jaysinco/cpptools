@@ -99,6 +99,18 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "xxd"
         "libnl3"
         "libpcap"
+        "libcap"
+        "util-linux"
+        "systemd"
+        "libseat"
+        "pixman"
+        "libdisplay-info"
+        "libliftoff"
+        "mtdev"
+        "libevdev"
+        "libinput"
+        "xcb-renderutil"
+        "wlroots"
     )
 fi
 
