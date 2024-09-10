@@ -110,7 +110,11 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "mtdev"
         "libevdev"
         "libinput"
+        "freetype"
+        "fontconfig"
+        "cairo"
         "xcb-renderutil"
+        "dbus"
         "wlroots"
     )
 fi
