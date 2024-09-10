@@ -4,6 +4,7 @@ add_library(${TARGET_NAME} INTERFACE)
 
 target_include_directories(${TARGET_NAME} INTERFACE
     ${TC_INSTALL_DIR}/include
+    ${TC_INSTALL_DIR}/include/pixman-1
 )
 
 target_link_libraries(${TARGET_NAME} INTERFACE
