@@ -23,6 +23,8 @@ fi
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
+    cd $SCRIPT_DIR/src/$SOURCE_DIR
+    patch -p0 < ../../patches/0001-change-kiosk-bgcolor.patch
 fi
 
 pushd $SCRIPT_DIR/src/$SOURCE_DIR \
