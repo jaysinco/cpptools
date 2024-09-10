@@ -81,9 +81,7 @@
         "lazygit",
         "croc",
         "tcl",
-        "extra-cmake-modules",
-        "qemu-base",
-        "qemu-emulators-full"
+        "extra-cmake-modules"
     ],
     "parallel downloads": 5,
     "profile_config": null,
