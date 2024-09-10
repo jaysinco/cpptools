@@ -1,0 +1,10 @@
+--- ./catalog/meson.build
++++ ./catalog/meson.build
+@@ -34,5 +34,5 @@
+                 install_dir : catalogdir)
+ endforeach
+
+-meson.add_install_script(sh, '-c',
+-                         'test -n "$DESTDIR" || @0@/journalctl --update-catalog'.format(bindir))
++# meson.add_install_script(sh, '-c',
++#                          'test -n "$DESTDIR" || @0@/journalctl --update-catalog'.format(bindir))
