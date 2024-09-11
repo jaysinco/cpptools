@@ -88,7 +88,9 @@
         "lazygit",
         "croc",
         "tcl",
-        "extra-cmake-modules"
+        "extra-cmake-modules",
+        "wayland-protocols",
+        "wlroots0.17"
     ],
     "parallel downloads": 5,
     "profile_config": null,
