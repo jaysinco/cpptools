@@ -59,6 +59,8 @@
         "python",
         "python-pip",
         "python-jinja",
+        "unzip",
+        "help2man",
         "base-devel",
         "openssh",
         "clash",
