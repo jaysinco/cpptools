@@ -48,7 +48,12 @@ if [ ! -f "/usr/bin/ct-ng" ]; then
     echo "-- install crosstool-ng"
     tar xf $src_dir/crosstool-ng-1.26.0.tar.xz --directory=$HOME
     pushd $HOME/crosstool-ng-1.26.0
-    ./configure --prefix=/usr && make && sudo make install
+    ./configure \
+        --prefix=/usr \
+        --libexecdir=/usr/lib \
+        --with-bash-completion \
+        --with-ncurses \
+    && make && sudo make install
     popd
     rm -rf $HOME/crosstool-ng-1.26.0
 fi
