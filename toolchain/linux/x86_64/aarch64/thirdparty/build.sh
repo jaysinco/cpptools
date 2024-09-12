@@ -95,7 +95,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "sdl"
         "ffmpeg"
         "opencv"
-        "libxl"
+        # "libxl"
         "xxd"
         "ftxui"
         "libnl3"
