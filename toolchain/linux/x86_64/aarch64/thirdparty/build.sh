@@ -116,6 +116,8 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "xcb-renderutil"
         "dbus"
         "wlroots"
+        "json-c"
+        "drm-info"
     )
 fi
 
