@@ -28,6 +28,13 @@ cp -rf $etc_dir/vscode/*.json $HOME/.config/Code/User/
 mkdir -p $HOME/.config/ibus/rime/
 cp -rf $etc_dir/rime/*.yaml $HOME/.config/ibus/rime/
 
+mkdir -p $HOME/.config/sway/
+cp -rf $etc_dir/sway/config $HOME/.config/sway/
+cp -rf $etc_dir/sway/env $HOME/.config/sway/
+
+mkdir -p $HOME/.config/foot/
+cp -rf $etc_dir/foot/foot.ini $HOME/.config/foot/
+
 if [ ! -f "$HOME/.ssh/id_rsa" ]; then
     echo "-- install ssh key"
     mkdir -p $HOME/.ssh

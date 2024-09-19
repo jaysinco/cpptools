@@ -90,7 +90,9 @@
         "tcl",
         "extra-cmake-modules",
         "wayland-protocols",
-        "wlroots0.17"
+        "wlroots0.17",
+        "sway",
+        "foot"
     ],
     "parallel downloads": 5,
     "profile_config": null,
