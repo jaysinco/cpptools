@@ -1,6 +1,6 @@
-# WLR_BACKENDS=drm,libinput
+#WLR_BACKENDS=drm,libinput
 
-GTK_IM_MODULE=fcitx
+#GTK_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
 QT_IM_MODULE=fcitx
 
