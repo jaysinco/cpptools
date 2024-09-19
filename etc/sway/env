@@ -1,4 +1,5 @@
 WLR_BACKENDS=drm,libinput
+#WLR_RENDERER=pixman
 
 GTK_IM_MODULE=fcitx
 XMODIFIERS=@im=fcitx
