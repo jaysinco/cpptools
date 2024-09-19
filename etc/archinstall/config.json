@@ -92,7 +92,8 @@
         "extra-cmake-modules",
         "wayland-protocols",
         "sway",
-        "foot"
+        "foot",
+        "okular"
     ],
     "parallel downloads": 5,
     "profile_config": null,
