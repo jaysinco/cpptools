@@ -11,7 +11,7 @@ WantedBy=default.target
 [Service]
 Type=simple
 EnvironmentFile=-%h/.config/sway/env
-ExecStart=/usr/bin/sway
+ExecStart=/usr/bin/dbus-run-session /usr/bin/sway
 StandardInput=null
 StandardOutput=journal
 StandardError=journal

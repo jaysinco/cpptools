@@ -25,8 +25,8 @@ cp -rf $etc_dir/fish/proxy.fish $HOME/opt/
 mkdir -p $HOME/.config/Code/User/
 cp -rf $etc_dir/vscode/*.json $HOME/.config/Code/User/
 
-mkdir -p $HOME/.config/ibus/rime/
-cp -rf $etc_dir/rime/*.yaml $HOME/.config/ibus/rime/
+mkdir -p $HOME/.local/share/fcitx5/rime/
+cp -rf $etc_dir/rime/*.yaml $HOME/.local/share/fcitx5/rime/
 
 mkdir -p $HOME/.config/sway/
 cp -rf $etc_dir/sway/config $HOME/.config/sway/
@@ -34,6 +34,15 @@ cp -rf $etc_dir/sway/env $HOME/.config/sway/
 
 mkdir -p $HOME/.config/foot/
 cp -rf $etc_dir/foot/foot.ini $HOME/.config/foot/
+
+mkdir -p $HOME/.config/systemd/user/
+cp -rf $etc_dir/systemd/user/sway.service $HOME/.config/systemd/user/
+
+if [ ! -f "/etc/systemd/system/getty@tty1.service.d/override.conf" ]; then
+    echo "-- install getty@tty1 override.conf"
+    sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
+    sudo cp -rf $etc_dir/systemd/system/getty@tty1.service.d/override.conf /etc/systemd/system/getty@tty1.service.d/
+fi
 
 if [ ! -f "$HOME/.ssh/id_rsa" ]; then
     echo "-- install ssh key"
