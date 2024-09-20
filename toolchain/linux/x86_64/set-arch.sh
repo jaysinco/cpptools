@@ -12,8 +12,9 @@ xdg-mime default org.kde.okular.desktop application/pdf
 jq -r ".packages[]" $etc_dir/archinstall/config.json | \
     xargs sudo pacman -S --needed --noconfirm
 
-mkdir -p $HOME/tmp
 mkdir -p $HOME/opt
+mkdir -p $HOME/mnt
+mkdir -p $HOME/tmp
 
 cp -rf $etc_dir/bash/.* $HOME/
 cp -rf $etc_dir/git/.gitconfig $HOME/

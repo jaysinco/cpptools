@@ -68,6 +68,7 @@
         "help2man",
         "base-devel",
         "openssh",
+        "sshfs",
         "clash",
         "wqy-microhei",
         "ttf-hack-nerd",
@@ -94,7 +95,8 @@
         "wayland-protocols",
         "sway",
         "foot",
-        "okular"
+        "okular",
+        "sqlitebrowser"
     ],
     "parallel downloads": 5,
     "profile_config": null,
