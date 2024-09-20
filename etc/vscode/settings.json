@@ -57,5 +57,7 @@
     },
     "MATLAB.indexWorkspace": false,
     "MATLAB.matlabConnectionTiming": "never",
-    "MATLAB.telemetry": false
+    "MATLAB.telemetry": false,
+    "find-it-faster.general.useTerminalInEditor": true,
+    "find-it-faster.general.killTerminalAfterUse": true
 }

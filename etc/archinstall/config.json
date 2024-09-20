@@ -88,6 +88,7 @@
         "ripgrep",
         "fd",
         "fzf",
+        "bat",
         "tcl",
         "extra-cmake-modules",
         "wayland-protocols",

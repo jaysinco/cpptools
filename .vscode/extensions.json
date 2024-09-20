@@ -6,6 +6,7 @@
         "llvm-vs-code-extensions.vscode-clangd",
         "ms-vscode.cpptools",
         "twxs.cmake",
+        "TomRijndorp.find-it-faster",
         "ms-python.autopep8",
         "ms-python.python",
         "waderyan.gitblame",
