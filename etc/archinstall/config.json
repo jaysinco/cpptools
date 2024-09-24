@@ -73,6 +73,7 @@
         "wqy-microhei",
         "ttf-hack-nerd",
         "ttf-cascadia-mono-nerd",
+        "otf-font-awesome",
         "htop",
         "vim",
         "fish",
@@ -94,6 +95,7 @@
         "extra-cmake-modules",
         "wayland-protocols",
         "sway",
+        "waybar",
         "foot",
         "okular",
         "sqlitebrowser"

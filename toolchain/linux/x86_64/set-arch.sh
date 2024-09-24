@@ -35,6 +35,9 @@ mkdir -p $HOME/.config/sway/
 cp -rf $etc_dir/sway/config $HOME/.config/sway/
 cp -rf $etc_dir/sway/env $HOME/.config/sway/
 
+mkdir -p $HOME/.config/waybar/
+cp -rf $etc_dir/waybar/* $HOME/.config/waybar/
+
 mkdir -p $HOME/.config/foot/
 cp -rf $etc_dir/foot/foot.ini $HOME/.config/foot/
 
