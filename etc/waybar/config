@@ -17,16 +17,20 @@
         "battery",
         "clock"
     ],
+    "sway/workspaces": {
+        "format": "<span size='larger'>{name}</span>"
+    },
     "wlr/taskbar": {
         "format": "{icon} {title:.20}",
         "icon-size": 21,
         "on-click-middle": "close",
         "tooltip-format": "{title}",
         "ignore-list": [],
-        "on-click": "activate"
+        "on-click": "activate",
+        "sort-by-app-id": true
     },
     "tray": {
-        "icon-size": 21,
+        "icon-size": 18,
         "spacing": 3
     },
     "clock": {
@@ -55,14 +59,14 @@
     },
     "network": {
         "format-wifi": " {icon}",
-        "format-ethernet": "  ",
-        "format-disconnected": "󰌙",
+        "format-ethernet": "<span size='larger'>  </span>",
+        "format-disconnected": "<span size='larger'> 󰌙 </span>",
         "format-icons": [
-            "󰤯 ",
-            "󰤟 ",
-            "󰤢 ",
-            "󰤢 ",
-            "󰤨 "
+            "<span size='larger'> 󰤯 </span>",
+            "<span size='larger'> 󰤟 </span>",
+            "<span size='larger'> 󰤢 </span>",
+            "<span size='larger'> 󰤢 </span>",
+            "<span size='larger'> 󰤨 </span>"
         ]
     },
     "pulseaudio": {
@@ -70,12 +74,12 @@
         "scroll-step": 10,
         "format": "{icon}",
         "tooltip-format": "{volume}%",
-        "format-muted": " ",
+        "format-muted": "<span size='larger'> </span>",
         "format-icons": {
             "default": [
-                " ",
-                " ",
-                " "
+                "<span size='larger'> </span>",
+                "<span size='larger'> </span>",
+                "<span size='larger'> </span>"
             ]
         },
         "on-click": "pavucontrol"
