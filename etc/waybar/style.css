@@ -41,16 +41,23 @@ tooltip label {
 
 #workspaces button {
     padding: 1px;
+    margin-right: 1px;
     color: rgba(255, 255, 255, 0.25);
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #workspaces button.focused {
-    color: #f8b705;
+    background: rgba(100, 100, 100, 0.5);
+    color: white;
 }
 
-#workspaces button.urgent {
-    background-color: #eb4d4b;
+#workspaces button:hover {
+    background: rgba(100, 100, 100, 0.3);
+}
+
+#workspaces button:hover.focused {
+    background: rgba(100, 100, 100, 0.8);
+    color: white;
 }
 
 #taskbar button {
@@ -69,7 +76,10 @@ tooltip label {
 
 #taskbar button:hover {
     background: rgba(100, 100, 100, 0.3);
-    color: white;
+}
+
+#taskbar button:hover.active {
+    background: rgba(100, 100, 100, 0.8);
 }
 
 #cpu,

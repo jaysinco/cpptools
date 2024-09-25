@@ -25,7 +25,9 @@
         "icon-size": 21,
         "on-click-middle": "close",
         "tooltip-format": "{title}",
-        "ignore-list": [],
+        "ignore-list": [
+            "foot"
+        ],
         "on-click": "activate",
         "sort-by-app-id": true
     },
