@@ -55,9 +55,8 @@ tooltip label {
 
 #taskbar button {
     min-width: 130px;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 1px;
     padding-left: 8px;
     padding-right: 8px;
     color: white;
@@ -65,13 +64,11 @@ tooltip label {
 }
 
 #taskbar button.active {
-    border-bottom: 3px solid white;
     background: rgba(100, 100, 100, 0.5);
 }
 
 #taskbar button:hover {
-    border-bottom: 3px solid white;
-    background: rgba(200, 200, 200, 0.3);
+    background: rgba(100, 100, 100, 0.3);
     color: white;
 }
 
@@ -99,18 +96,6 @@ tooltip label {
     border-radius: 10px;
     margin-left: 20px;
     margin-right: 20px;
-}
-
-#tray>.passive {
-    border-bottom: none;
-}
-
-#tray>.active {
-    border-bottom: 3px solid white;
-}
-
-#tray>.needs-attention {
-    border-bottom: 3px solid #fac105;
 }
 
 #tray>widget {
