@@ -93,9 +93,11 @@ function clone_repo() {
         echo "-- git clone $2 -b $3" \
         && git init \
         && git remote add origin git@gitee.com:$2 \
+        && git remote set-url --add --push origin git@gitee.com:$2 \
+        && git remote set-url --add --push origin git@jihulab.com:$2 \
+        && git remote set-url --add --push origin git@github.com:$2 \
         && git fetch \
-        && git checkout $3 -b $4 \
-        && git remote add backup git@github.com:$2
+        && git checkout $3 -b $4
     fi
 }
 
