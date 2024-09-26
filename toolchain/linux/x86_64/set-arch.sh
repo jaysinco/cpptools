@@ -32,8 +32,7 @@ mkdir -p $HOME/.local/share/fcitx5/rime/
 cp -rf $etc_dir/rime/*.yaml $HOME/.local/share/fcitx5/rime/
 
 mkdir -p $HOME/.config/sway/
-cp -rf $etc_dir/sway/config $HOME/.config/sway/
-cp -rf $etc_dir/sway/env $HOME/.config/sway/
+cp -rf $etc_dir/sway/* $HOME/.config/sway/
 
 mkdir -p $HOME/.config/waybar/
 cp -rf $etc_dir/waybar/* $HOME/.config/waybar/
@@ -48,7 +47,7 @@ mkdir -p $HOME/.config/gtk-4.0/
 cp -rf $etc_dir/gtk/settings.ini $HOME/.config/gtk-4.0/
 
 mkdir -p $HOME/.config/systemd/user/
-cp -rf $etc_dir/systemd/user/sway.service $HOME/.config/systemd/user/
+cp -rf $etc_dir/systemd/user/* $HOME/.config/systemd/user/
 
 if [ ! -f "/etc/systemd/system/getty@tty1.service.d/override.conf" ]; then
     echo "-- install getty@tty1 override.conf"

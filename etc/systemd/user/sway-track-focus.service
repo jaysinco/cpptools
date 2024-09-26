@@ -1,0 +1,10 @@
+[Unit]
+Description=sway track focus
+
+[Service]
+Type=simple
+#ExecStartPre=/bin/sleep 1
+ExecStart=%h/.config/sway/track_focus.sh
+StandardInput=null
+StandardOutput=journal
+StandardError=journal
