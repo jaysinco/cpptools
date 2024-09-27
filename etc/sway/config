@@ -110,6 +110,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
 
+    bindsym $mod+grave [app_id="foot"] focus
     bindsym $mod+Tab [con_mark=_prev] focus
 #
 # Workspaces:
