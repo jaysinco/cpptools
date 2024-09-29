@@ -3,6 +3,7 @@
     "workbench.iconTheme": "vscode-icons",
     "window.newWindowDimensions": "offset",
     "window.menuBarVisibility": "hidden",
+    "window.title": "${dirty}${rootName}${separator}${profileName}${separator}${appName}",
     "window.titleBarStyle": "custom",
     "editor.fontFamily": "'Hack Nerd Font Mono'",
     "editor.fontWeight": 500,
