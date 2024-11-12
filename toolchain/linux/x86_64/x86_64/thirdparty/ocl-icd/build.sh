@@ -30,6 +30,11 @@ if [ ! -f "/usr/bin/ruby" ]; then
     exit 1
 fi
 
+if [ ! -f "/usr/bin/autoreconf" ]; then
+    echo "missing! autoconf automake libtool"
+    exit 1
+fi
+
 mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/src/$SOURCE_DIR \

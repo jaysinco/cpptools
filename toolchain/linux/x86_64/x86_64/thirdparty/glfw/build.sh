@@ -45,7 +45,7 @@ if [ ! -f "/usr/include/X11/extensions/XInput.h" ]; then
     exit 1
 fi
 
-if [ ! -f "/usr/include/X11/Xcursor.h" ]; then
+if [ ! -f "/usr/include/X11/Xcursor/Xcursor.h" ]; then
     echo "missing! libxcursor-dev"
     exit 1
 fi
