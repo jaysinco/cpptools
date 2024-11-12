@@ -26,8 +26,8 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
 fi
 
 if [ ! -f "/usr/bin/ruby" ]; then
-    echo "-- install ruby"
-    sudo apt-get -y install ruby
+    echo "missing! ruby"
+    exit 1
 fi
 
 mkdir -p $SCRIPT_DIR/out \

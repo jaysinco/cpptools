@@ -26,13 +26,13 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
 fi
 
 # if [ ! -f "/usr/bin/glslangValidator" ]; then
-#     echo "-- install glslang-tools"
-#     sudo apt-get -y install glslang-tools
+#     echo "missing! glslang-tools"
+#     exit 1
 # fi
 
 # if [ ! -f "/usr/bin/llvm-config" ]; then
-#     echo "-- install llvm-dev"
-#     sudo apt-get -y install llvm-dev
+#     echo "missing! llvm-dev"
+#     exit 1
 # fi
 
 if ! grep -q Mako <<< `pip3 list`; then

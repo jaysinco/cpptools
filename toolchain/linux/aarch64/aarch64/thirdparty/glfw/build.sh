@@ -26,23 +26,28 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
 fi
 
 if [ ! -f "/usr/share/ECM/cmake/ECMConfig.cmake" ]; then
-    echo "-- install ecm"
-    sudo apt-get -y install extra-cmake-modules
+    echo "missing! extra-cmake-modules"
+    exit 1
 fi
 
 if [ ! -f "/usr/include/X11/extensions/Xrandr.h" ]; then
-    echo "-- install libxrandr-dev"
-    sudo apt-get -y install libxrandr-dev
+    echo "missing! libxrandr-dev"
+    exit 1
 fi
 
 if [ ! -f "/usr/include/X11/extensions/Xinerama.h" ]; then
-    echo "-- install libxinerama-dev"
-    sudo apt-get -y install libxinerama-dev
+    echo "missing! libxinerama-dev"
+    exit 1
 fi
 
 if [ ! -f "/usr/include/X11/extensions/XInput.h" ]; then
-    echo "-- install libxi-dev"
-    sudo apt-get -y install libxi-dev
+    echo "missing! libxi-dev"
+    exit 1
+fi
+
+if [ ! -f "/usr/include/X11/Xcursor.h" ]; then
+    echo "missing! libxcursor-dev"
+    exit 1
 fi
 
 mkdir -p $SCRIPT_DIR/out \

@@ -32,6 +32,8 @@ pushd $SCRIPT_DIR/out \
 ../src/$SOURCE_DIR/Configure \
     linux-x86_64 \
     --prefix=$TC_INSTALL_DIR \
+    -I$TC_INSTALL_DIR/include \
+    -L$TC_INSTALL_DIR/lib \
     --release \
     shared \
     zlib \

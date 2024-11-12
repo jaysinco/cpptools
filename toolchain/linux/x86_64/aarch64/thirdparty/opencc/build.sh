@@ -26,8 +26,8 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
 fi
 
 if [ ! -f "/usr/bin/opencc_dict" ]; then
-    echo "-- install opencc"
-    sudo apt-get -y install opencc
+    echo "missing! opencc"
+    exit 1
 fi
 
 mkdir -p $SCRIPT_DIR/out \

@@ -26,8 +26,8 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
 fi
 
 if [ ! -f "/usr/bin/tclsh" ]; then
-    echo "-- install tclsh"
-    sudo apt-get -y install tclsh
+    echo "missing! tclsh"
+    exit 1
 fi
 
 mkdir -p $SCRIPT_DIR/out \
