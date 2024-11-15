@@ -6,8 +6,7 @@
     "margin-bottom": -1,
     "passthrough": false,
     "modules-left": [
-        "sway/workspaces",
-        "wlr/taskbar"
+        "sway/workspaces"
     ],
     "modules-center": [],
     "modules-right": [
