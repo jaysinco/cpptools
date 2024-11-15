@@ -68,6 +68,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DENABLE_PIC=ON \
     -DWITH_ADE=OFF \
     -DWITH_IPP=OFF \
+    -DWITH_OPENEXR=OFF \
 && \
 cmake --build . --parallel=`nproc` \
 && \

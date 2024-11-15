@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=openexr-2.5.10
+SOURCE_DIR=openexr-v3.2.4
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -21,8 +21,8 @@ if [ $do_clean -eq 1 ]; then
 fi
 
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
-    mkdir -p $SCRIPT_DIR/src
-    tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
+    mkdir -p $SCRIPT_DIR/src/$SOURCE_DIR
+    tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src/$SOURCE_DIR
 fi
 
 mkdir -p $SCRIPT_DIR/out \
@@ -37,6 +37,7 @@ cmake ../src/$SOURCE_DIR -G "Ninja" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_MSVC_RUNTIME_LIBRARY="MultiThreadedDLL" \
     -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_TESTING=OFF \
     -DPYILMBASE_ENABLE=OFF \
 && \
 cmake --build . --parallel=`nproc` \
