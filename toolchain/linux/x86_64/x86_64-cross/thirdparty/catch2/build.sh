@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=Catch2-3.4.0
+SOURCE_DIR=Catch2-3.7.1
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
