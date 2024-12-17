@@ -49,6 +49,7 @@
     "git.autofetch": false,
     "git.confirmSync": false,
     "git.openRepositoryInParentFolders": "always",
+    "git.autoRepositoryDetection": false,
     "clangd.arguments": [
         "--completion-style=detailed",
         "--function-arg-placeholders=0",
