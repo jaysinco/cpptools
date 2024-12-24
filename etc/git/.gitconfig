@@ -1,21 +1,30 @@
 [user]
-	name = jaysinco
-	email = jaysinco@163.com
+    name = jaysinco
+    email = jaysinco@163.com
 [core]
-	autocrlf = input
-	safecrlf = true
-	longpaths = true
-	quotepath = false
+    autocrlf = input
+    safecrlf = true
+    longpaths = true
+    quotepath = false
+    editor = code --wait
 [i18n]
-	filesEncoding = utf-8
+    filesEncoding = utf-8
 [pull]
-	rebase = false
+    rebase = false
 [fetch]
-	prune = true
+    prune = true
 [init]
-	defaultBranch = master
+    defaultBranch = master
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
