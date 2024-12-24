@@ -1,19 +1,25 @@
 {
     "recommendations": [
-        "vscode-icons-team.vscode-icons",
+        "dart-code.dart-code",
+        "dart-code.flutter",
         "gurumukhi.selected-lines-count",
         "jeff-hykin.better-cpp-syntax",
-        "llvm-vs-code-extensions.vscode-clangd",
-        "ms-vscode.cpptools",
-        "twxs.cmake",
-        "TomRijndorp.find-it-faster",
-        "ms-python.autopep8",
-        "ms-python.python",
-        "waderyan.gitblame",
-        "ms-vscode.hexeditor",
         "jeff-hykin.better-shellscript-syntax",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "mathworks.language-matlab",
+        "ms-ceintl.vscode-language-pack-zh-hans",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
         "ms-vscode-remote.remote-ssh",
         "ms-vscode-remote.remote-ssh-edit",
-        "ms-vscode.remote-explorer"
+        "ms-vscode.cpptools",
+        "ms-vscode.hexeditor",
+        "ms-vscode.remote-explorer",
+        "qwtel.sqlite-viewer",
+        "tomrijndorp.find-it-faster",
+        "twxs.cmake",
+        "vscode-icons-team.vscode-icons",
+        "waderyan.gitblame"
     ]
 }

@@ -9,13 +9,16 @@ src_dir=$git_root/src
 
 xdg-mime default org.kde.okular.desktop application/pdf
 
+echo "-- install archlinux packages"
 jq -r ".packages[]" $etc_dir/archinstall/config.json | \
-    xargs sudo pacman -S --needed --noconfirm
+    xargs sudo pacman -S --needed --noconfirm |& \
+    grep -v 'is up to date'
 
 mkdir -p $HOME/opt
 mkdir -p $HOME/mnt
 mkdir -p $HOME/tmp
 
+echo "-- install config files"
 cp -rf $etc_dir/bash/.* $HOME/
 cp -rf $etc_dir/git/.gitconfig $HOME/
 cp -rf $etc_dir/tmux/.tmux.conf $HOME/
@@ -112,6 +115,14 @@ if [ ! -d "$HOME/opt/microsoft-edge-stable-bin" ]; then
     && makepkg -si --noconfirm
 fi
 
+if [[ $(type -P "code") ]]; then
+    echo "-- update vscode extensions"
+    code --list-extensions | \
+        jq --raw-input --slurp 'split("\n")' | \
+        jq --indent 4 '{ recommendations: [ .[] | if length > 0 then . else empty end ] }' \
+        > $git_root/.vscode/extensions.json
+fi
+
 if [ ! -d "$HOME/opt/visual-studio-code-bin" ]; then
     echo "-- install vscode"
     git clone \
@@ -120,3 +131,5 @@ if [ ! -d "$HOME/opt/visual-studio-code-bin" ]; then
     && pushd $HOME/opt/visual-studio-code-bin \
     && makepkg -si --noconfirm
 fi
+
+echo done!
