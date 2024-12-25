@@ -38,5 +38,13 @@
     {
         "key": "ctrl+shift+j",
         "command": "-find-it-faster.findFiles"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
     }
 ]
