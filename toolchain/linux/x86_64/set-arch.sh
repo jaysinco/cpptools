@@ -88,6 +88,11 @@ if [ ! -f "/usr/bin/ct-ng" ]; then
     rm -rf $HOME/crosstool-ng-1.26.0
 fi
 
+if [[ ! -d "$HOME/opt/flutter" ]]; then
+    echo "-- install flutter"
+    tar xf $src_dir/flutter_linux_3.27.1-stable.tar.xz --directory=$HOME/opt
+fi
+
 function clone_repo() {
     mkdir -p "$1"
     cd "$1"
