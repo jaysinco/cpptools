@@ -5,7 +5,7 @@
         "audio": "pulseaudio"
     },
     "bootloader": "grub",
-    "config_version": "3.0.1",
+    "config_version": "2.6.0",
     "debug": true,
     "disk_encryption": null,
     "hostname": "archlinux",
@@ -20,7 +20,24 @@
     "mirror_config": {
         "custom_mirrors": [],
         "mirror_regions": {
-            "China": []
+            "China": [
+                "https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.xjtu.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.wsyu.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.shanghaitech.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.qvq.net.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.qlu.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.nju.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.jxust.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.jlu.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch",
+                "https://mirrors.aliyun.com/archlinux/$repo/os/$arch",
+                "https://mirror.nyist.edu.cn/archlinux/$repo/os/$arch"
+            ]
         }
     },
     "network_config": {
@@ -95,5 +112,5 @@
     "custom-commands": [
         "systemctl enable sshd"
     ],
-    "version": "3.0.1"
+    "version": "2.6.0"
 }
