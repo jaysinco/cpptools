@@ -20,11 +20,7 @@
     "mirror_config": {
         "custom_mirrors": [],
         "mirror_regions": {
-            "China": [
-                "{\"url\":\"https://mirrors.tuna.tsinghua.edu.cn/archlinux/\"}",
-                "{\"url\":\"https://mirrors.sjtug.sjtu.edu.cn/archlinux/\"}",
-                "{\"url\":\"https://mirrors.aliyun.com/archlinux/\"}"
-            ]
+            "China": []
         }
     },
     "network_config": {
