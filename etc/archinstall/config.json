@@ -5,7 +5,7 @@
     "audio_config": {
         "audio": "pulseaudio"
     },
-    "bootloader": "grub",
+    "bootloader": "Grub",
     "debug": true,
     "disk_encryption": null,
     "hostname": "archlinux",
@@ -16,6 +16,29 @@
         "kb_layout": "us",
         "sys_enc": "UTF-8",
         "sys_lang": "en_US"
+    },
+    "mirror_config": {
+        "custom_mirrors": [
+            {
+                "name": "aliyun",
+                "sign_check": "Never",
+                "sign_option": "TrustAll",
+                "url": "https://mirrors.aliyun.com/archlinux/$repo/os/$arch"
+            },
+            {
+                "name": "tsinghua",
+                "sign_check": "Never",
+                "sign_option": "TrustAll",
+                "url": "https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch"
+            },
+            {
+                "name": "sjtu",
+                "sign_check": "Optional",
+                "sign_option": "TrustAll",
+                "url": " https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch"
+            }
+        ],
+        "mirror_regions": {}
     },
     "network_config": {
         "type": "nm"
