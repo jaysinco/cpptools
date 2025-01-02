@@ -35,7 +35,7 @@
                 "name": "sjtu",
                 "sign_check": "Optional",
                 "sign_option": "TrustAll",
-                "url": " https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch"
+                "url": "https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch"
             }
         ],
         "mirror_regions": {}
