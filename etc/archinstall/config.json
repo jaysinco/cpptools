@@ -20,12 +20,6 @@
     "mirror_config": {
         "custom_mirrors": [
             {
-                "name": "aliyun",
-                "sign_check": "Never",
-                "sign_option": "TrustAll",
-                "url": "https://mirrors.aliyun.com/archlinux/$repo/os/$arch"
-            },
-            {
                 "name": "tsinghua",
                 "sign_check": "Never",
                 "sign_option": "TrustAll",
@@ -47,6 +41,8 @@
     "ntp": true,
     "offline": false,
     "packages": [
+        "networkmanager",
+        "pulseaudio",
         "xorg",
         "xfce4",
         "xfce4-pulseaudio-plugin",

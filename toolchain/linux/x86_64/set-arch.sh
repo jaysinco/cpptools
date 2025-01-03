@@ -7,12 +7,12 @@ git_root="$(git rev-parse --show-toplevel)"
 etc_dir=$git_root/etc
 src_dir=$git_root/src
 
-xdg-mime default org.kde.okular.desktop application/pdf
-
 echo "-- install archlinux packages"
 jq -r ".packages[]" $etc_dir/archinstall/config.json | \
     xargs sudo pacman -S --needed --noconfirm |& \
     grep -v 'is up to date'
+
+xdg-mime default org.kde.okular.desktop application/pdf
 
 mkdir -p $HOME/opt
 mkdir -p $HOME/mnt
