@@ -37,6 +37,7 @@ pushd $SCRIPT_DIR/out \
     --enable-shared \
     --disable-static \
     --disable-audio \
+    --disable-libdecor \
 && \
 make -j`nproc` \
 && \
