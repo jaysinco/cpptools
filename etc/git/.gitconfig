@@ -6,7 +6,7 @@
     safecrlf = true
     longpaths = true
     quotepath = false
-    editor = code --wait
+    editor = nvim
 [i18n]
     filesEncoding = utf-8
 [pull]
