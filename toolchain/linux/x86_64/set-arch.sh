@@ -52,6 +52,9 @@ cp -rf $etc_dir/gtk/settings.ini $HOME/.config/gtk-4.0/
 mkdir -p $HOME/.config/systemd/user/
 cp -rf $etc_dir/systemd/user/* $HOME/.config/systemd/user/
 
+mkdir -p $HOME/.config/nvim/
+cp -rf $etc_dir/nvim/* $HOME/.config/nvim/
+
 if [ ! -f "/etc/systemd/system/getty@tty1.service.d/override.conf" ]; then
     echo "-- install getty@tty1 override.conf"
     sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/

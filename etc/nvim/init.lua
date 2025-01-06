@@ -1,0 +1,6 @@
+require('utils')
+require('plugins')
+require('settings')
+require('settings.completion')
+require('lsp')
+require('settings.keymap')
