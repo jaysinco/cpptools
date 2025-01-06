@@ -24,7 +24,7 @@ return {
                 pattern = "SessionLoadPost",
                 group = config_group,
                 callback = function()
-                    require('nvim-tree').toggle(true, true)
+                    require('nvim-tree.api').tree.toggle()
                 end,
             })
         end,
