@@ -49,10 +49,10 @@ vim.keymap.set('n', '<space>s', ':Gitsigns setqflist<cr>', opts)
 vim.keymap.set('n', '<space>o', ':SymbolsOutline<cr>', opts)
 vim.keymap.set('n', '<space>a', ':TroubleToggle document_diagnostics<cr>', opts)
 
+vim.keymap.set("n", "q", "<Nop>", opts)
 vim.keymap.set('n', 'n', [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
 vim.keymap.set('n', 'N', [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], opts)
 vim.keymap.set('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], opts)
 vim.keymap.set('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], opts)
 vim.keymap.set('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], opts)
 vim.keymap.set('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], opts)
-

@@ -1,6 +1,6 @@
 require('utils')
 require('settings')
+require('settings.keymap')
 require('settings.lazy')
 require('settings.completion')
 require('lsp')
-require('settings.keymap')
