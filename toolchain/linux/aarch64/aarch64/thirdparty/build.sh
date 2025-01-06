@@ -38,7 +38,6 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "libwebp"
         "libtiff"
         "openjpeg"
-        "openexr"
         "boost"
         "libuv"
         "usockets"
