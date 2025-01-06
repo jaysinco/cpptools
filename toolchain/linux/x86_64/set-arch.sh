@@ -70,6 +70,12 @@ if [ ! -f "$HOME/.ssh/id_rsa" ]; then
     chmod 644 $HOME/.ssh/id_rsa.pub
 fi
 
+if [ ! -f "$HOME/.ssh/config" ]; then
+    echo "-- install ssh config"
+    mkdir -p $HOME/.ssh
+    cp -rf $etc_dir/ssh/config $HOME/.ssh/
+fi
+
 if [ ! -f "$HOME/.config/clash/config.yaml" ]; then
     echo "-- install clash config"
     mkdir -p $HOME/.config/clash
