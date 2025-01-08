@@ -13,10 +13,12 @@ git config --global fetch.prune true
 pacman_need_sync=0
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 git_root="$(git rev-parse --show-toplevel)"
+etc_dir=$git_root/etc
+src_dir=$git_root/src
 
 function modify_mirror() {
     if [ "$(head -n 1 $1)" != "$2" ]; then
-        echo "modify $1"
+        echo "-- modify $1"
         sed -i "1s|^|$2\n|" $1
         pacman_need_sync=1
     fi
@@ -30,14 +32,26 @@ modify_mirror /etc/pacman.d/mirrorlist.msys    'Server = https://mirrors.tuna.ts
 
 if [ $pacman_need_sync -eq 1 ]; then pacman --noconfirm -Sy; fi
 
+if [ ! -f "$HOME/.ssh/id_rsa" ]; then
+    echo "-- install ssh key"
+    mkdir -p $HOME/.ssh
+    cp -rf $src_dir/id_rsa $src_dir/id_rsa.pub $HOME/.ssh/
+fi
+
+if [ ! -f "$USERPROFILE/.ssh/id_rsa" ]; then
+    echo "-- install ssh key"
+    mkdir -p $USERPROFILE/.ssh
+    cp -rf $src_dir/id_rsa $src_dir/id_rsa.pub $USERPROFILE/.ssh/
+fi
+
 if [ ! -f "/etc/profile.d/git-prompt.sh" ]; then
-    echo "copy git-prompt.sh"
-    cp $git_root/etc/msys/git-prompt.sh /etc/profile.d/
+    echo "-- copy git-prompt.sh"
+    cp $etc_dir/msys/git-prompt.sh /etc/profile.d/
 fi
 
 s1='shopt -q login_shell || . /etc/profile.d/git-prompt.sh'
 if ! grep -q "$s1" ~/.bashrc; then
-    echo "change ~/.bashrc for git prompt"
+    echo "-- change ~/.bashrc for git prompt"
     echo "$s1" >> ~/.bashrc
 fi
 
@@ -45,3 +59,5 @@ if [ ! -f "/usr/bin/gcc" ]; then pacman --noconfirm -S base-devel binutils gcc; 
 if [ ! -f "/usr/bin/zip" ]; then pacman --noconfirm -S zip; fi
 if [ ! -f "/usr/bin/unzip" ]; then pacman --noconfirm -S unzip; fi
 if [ ! -f "/mingw64/bin/jq" ]; then pacman --noconfirm -S mingw-w64-x86_64-jq; fi
+
+echo done!
