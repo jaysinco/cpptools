@@ -1,4 +1,5 @@
 * text=auto
 *.bat text eol=crlf
 *.sln text eol=crlf
+*.patch eol=lf
 *.sh text eol=lf

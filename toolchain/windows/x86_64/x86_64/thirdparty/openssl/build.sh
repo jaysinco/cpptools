@@ -26,7 +26,7 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
 fi
 
 vc_path=$(dirname "$(which cl)")
-perl_path=`which -a perl | grep strawberry`
+perl_path=`which -a perl | grep -i strawberry`
 echo "using perl from $perl_path"
 
 mkdir -p $SCRIPT_DIR/out \
