@@ -32,7 +32,7 @@
         "command": "-find-it-faster.findWithinFiles"
     },
     {
-        "key": "ctrl+p",
+        "key": "ctrl+shift+p",
         "command": "find-it-faster.findFiles"
     },
     {
