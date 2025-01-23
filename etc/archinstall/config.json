@@ -84,6 +84,7 @@
         "rclone",
         "tmux",
         "nnn",
+        "arp-scan",
         "net-tools",
         "ripgrep",
         "fd",
