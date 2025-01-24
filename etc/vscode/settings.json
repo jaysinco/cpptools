@@ -69,5 +69,8 @@
     "MATLAB.matlabConnectionTiming": "never",
     "MATLAB.telemetry": false,
     "find-it-faster.general.useTerminalInEditor": true,
-    "find-it-faster.general.killTerminalAfterUse": true
+    "find-it-faster.general.killTerminalAfterUse": true,
+    "chat.commandCenter.enabled": false,
+    "continue.showInlineTip": false,
+    "continue.pauseCodebaseIndexOnStart": true
 }
