@@ -58,6 +58,7 @@ fi
 if [ ! -f "/usr/bin/gcc" ]; then pacman --noconfirm -S base-devel binutils gcc; fi
 if [ ! -f "/usr/bin/zip" ]; then pacman --noconfirm -S zip; fi
 if [ ! -f "/usr/bin/unzip" ]; then pacman --noconfirm -S unzip; fi
+if [ ! -f "/usr/bin/rsync" ]; then pacman --noconfirm -S rsync libopenssl; fi
 if [ ! -f "/mingw64/bin/jq" ]; then pacman --noconfirm -S mingw-w64-x86_64-jq; fi
 
 echo done!
