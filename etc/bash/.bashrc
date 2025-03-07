@@ -9,7 +9,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-export NNN_OPTS="H"
+export NNN_OPTS="Adeor"
 export EDITOR=/usr/bin/code
 export CHROME_EXECUTABLE=/usr/bin/microsoft-edge-stable
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
