@@ -19,6 +19,7 @@
         "ms-vscode.cpptools",
         "ms-vscode.hexeditor",
         "ms-vscode.remote-explorer",
+        "netcorext.uuid-generator",
         "nvidia.nsight-vscode-edition",
         "qwtel.sqlite-viewer",
         "tomrijndorp.find-it-faster",
