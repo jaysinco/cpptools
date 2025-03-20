@@ -67,6 +67,8 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "opencv"
         "xxd"
         "ftxui"
+        "gperftools"
+        "sentencepiece"
     )
 fi
 
