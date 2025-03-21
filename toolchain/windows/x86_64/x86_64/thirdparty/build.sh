@@ -57,6 +57,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "tinyxml2"
         "opencv"
         "xxd"
+        "sentencepiece"
     )
 fi
 
