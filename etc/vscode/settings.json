@@ -8,7 +8,7 @@
     "editor.fontFamily": "'Hack Nerd Font Mono'",
     "editor.fontWeight": 500,
     "editor.fontLigatures": false,
-    "editor.fontSize": 15,
+    "editor.fontSize": 16,
     "editor.formatOnSave": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.stickyScroll.enabled": false,
