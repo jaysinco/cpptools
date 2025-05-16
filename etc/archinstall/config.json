@@ -102,7 +102,8 @@
         "waybar",
         "foot",
         "okular",
-        "sqlitebrowser"
+        "sqlitebrowser",
+        "gnuplot"
     ],
     "parallel downloads": 5,
     "profile_config": null,
