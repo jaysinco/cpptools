@@ -69,6 +69,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "ftxui"
         "gperftools"
         "sentencepiece"
+        "gnuplot-iostream"
     )
 fi
 
