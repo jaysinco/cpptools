@@ -58,6 +58,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "opencv"
         "xxd"
         "sentencepiece"
+        "gnuplot-iostream"
     )
 fi
 

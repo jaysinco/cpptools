@@ -10,6 +10,10 @@ target_link_libraries(${TARGET_NAME} INTERFACE
     ${TC_INSTALL_DIR}/lib/boost_program_options.lib
     ${TC_INSTALL_DIR}/lib/boost_timer.lib
     ${TC_INSTALL_DIR}/lib/boost_chrono.lib
+    ${TC_INSTALL_DIR}/lib/boost_iostreams.lib
+    ${TC_INSTALL_DIR}/lib/boost_system.lib
+    ${TC_INSTALL_DIR}/lib/boost_filesystem.lib
+    ${TC_INSTALL_DIR}/lib/boost_atomic.lib
 )
 
 target_compile_definitions(${TARGET_NAME} INTERFACE
