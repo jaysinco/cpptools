@@ -70,6 +70,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "gperftools"
         "sentencepiece"
         "gnuplot-iostream"
+        "pegtl"
     )
 fi
 
