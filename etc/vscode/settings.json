@@ -77,5 +77,6 @@
     "codingcopilot.enableInlineChatAutoFormatCode": false,
     "codingcopilot.enableCodelens": false,
     "codingcopilot.modelResponseLanguage": "English",
-    "codingcopilot.commitMessageLanguage": "en"
+    "codingcopilot.commitMessageLanguage": "en",
+    "codingcopilot.floatShortcut": false
 }
