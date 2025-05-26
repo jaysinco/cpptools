@@ -103,7 +103,8 @@
         "foot",
         "okular",
         "sqlitebrowser",
-        "gnuplot"
+        "gnuplot",
+        "filezilla"
     ],
     "parallel downloads": 5,
     "profile_config": null,
