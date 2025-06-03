@@ -86,7 +86,9 @@
     "DisableBandwidthMetrics": false,
     "DisableNatPortMap": false,
     "RelayClient": {},
-    "RelayService": {},
+    "RelayService": {
+      "Enabled": true
+    },
     "Transports": {
       "Network": {
         "Websocket": false

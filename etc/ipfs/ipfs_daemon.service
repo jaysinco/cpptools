@@ -4,11 +4,13 @@ After=network.target
 Documentation=https://docs.ipfs.tech/
 
 [Service]
-ExecStart=%h/opt/kubo/ipfs daemon
+User=sinco
+Group=sinco
+ExecStart=/home/sinco/opt/kubo/ipfs daemon
 Restart=no
 Type=exec
 StandardOutput=journal
 StandardError=journal
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

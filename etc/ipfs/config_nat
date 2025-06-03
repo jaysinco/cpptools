@@ -87,7 +87,12 @@
     "AddrFilters": null,
     "DisableBandwidthMetrics": false,
     "DisableNatPortMap": false,
-    "RelayClient": {},
+    "RelayClient": {
+      "Enabled": true,
+      "StaticRelays": [
+        "/ip4/139.224.196.187/tcp/4001/p2p/12D3KooWMo51bxTiA28uzcCjuedD1ZJ4T9usRqdN2tvWpMpVdEk2"
+      ]
+    },
     "RelayService": {},
     "Transports": {
       "Network": {
