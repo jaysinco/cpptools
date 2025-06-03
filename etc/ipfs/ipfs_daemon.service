@@ -1,0 +1,14 @@
+[Unit]
+Description=IPFS Daemon
+After=network.target
+Documentation=https://docs.ipfs.tech/
+
+[Service]
+ExecStart=%h/opt/kubo/ipfs daemon
+Restart=no
+Type=exec
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
