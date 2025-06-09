@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=glfw-3.3.10
+SOURCE_DIR=glm-1.0.1
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -23,31 +23,6 @@ fi
 if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     mkdir -p $SCRIPT_DIR/src
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
-fi
-
-if [ ! -f "/usr/share/ECM/cmake/ECMConfig.cmake" ]; then
-    echo "missing! extra-cmake-modules"
-    exit 1
-fi
-
-if [ ! -f "/usr/include/X11/extensions/Xrandr.h" ]; then
-    echo "missing! libxrandr-dev"
-    exit 1
-fi
-
-if [ ! -f "/usr/include/X11/extensions/Xinerama.h" ]; then
-    echo "missing! libxinerama-dev"
-    exit 1
-fi
-
-if [ ! -f "/usr/include/X11/extensions/XInput.h" ]; then
-    echo "missing! libxi-dev"
-    exit 1
-fi
-
-if [ ! -f "/usr/include/X11/Xcursor/Xcursor.h" ]; then
-    echo "missing! libxcursor-dev"
-    exit 1
 fi
 
 mkdir -p $SCRIPT_DIR/out \
@@ -62,11 +37,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBUILD_SHARED_LIBS=ON \
-    -DECM_DIR="/usr/share/ECM/cmake" \
-    -DGLFW_USE_WAYLAND=ON \
-    -DGLFW_BUILD_EXAMPLES=ON \
-    -DGLFW_BUILD_TESTS=OFF \
-    -DGLFW_BUILD_DOCS=OFF \
+    -DGLM_BUILD_TESTS=OFF \
 && \
 cmake --build . --parallel=`nproc` \
 && \
