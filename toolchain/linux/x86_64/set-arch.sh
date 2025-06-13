@@ -52,8 +52,14 @@ cp -rf $etc_dir/gtk/settings.ini $HOME/.config/gtk-4.0/
 mkdir -p $HOME/.config/systemd/user/
 cp -rf $etc_dir/systemd/user/* $HOME/.config/systemd/user/
 
-mkdir -p $HOME/.config/nvim/
-cp -rf $etc_dir/nvim/* $HOME/.config/nvim/
+install_nvim_config=false
+if [ "$install_nvim_config" = true ]; then
+    echo "-- install nvim config"
+    rm -rf $HOME/.config/nvim
+    rm -rf $HOME/.local/state/nvim
+    rm -rf $HOME/.local/share/nvim
+    ln -sf $etc_dir/nvim $HOME/.config/nvim
+fi
 
 if [ ! -f "/etc/systemd/system/getty@tty1.service.d/override.conf" ]; then
     echo "-- install getty@tty1 override.conf"
