@@ -7,3 +7,4 @@ vim.o.shiftwidth = 4    -- Number of spaces for auto-indent
 vim.o.softtabstop = 4   -- Number of spaces for <Tab> and <BS> in insert mode
 vim.o.expandtab = true  -- Use spaces instead of tabs
 vim.o.fixeol = false -- does not add a final newline
+vim.o.winborder = 'single'
