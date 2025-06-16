@@ -12,7 +12,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
       local nvim_tree = require("nvim-tree.api")
       if nvim_tree then
         nvim_tree.tree.change_root(arg)
-        nvim_tree.tree.open()
+        vim.schedule(function()
+          vim.cmd("%bwipeout")
+          nvim_tree.tree.open({ focus = false })
+          vim.cmd("wincmd l")
+        end)
       end
     end
   end,
