@@ -62,6 +62,7 @@
         "python",
         "python-pip",
         "python-jinja",
+        "pyright",
         "unzip",
         "help2man",
         "base-devel",

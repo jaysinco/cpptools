@@ -1,5 +1,6 @@
 require "nvchad.autocmds"
 
+-- open nvim-tree on start
 vim.api.nvim_create_autocmd("VimEnter", {
   pattern = "*",
   callback = function()
@@ -22,9 +23,25 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
+-- auto format on save
+local format_on_save = true
+
+local function toggle_format_on_save()
+  format_on_save = not format_on_save
+  print("format on save:", format_on_save and "on" or "off")
+end
+
 vim.api.nvim_create_autocmd("BufWritePre", {
-  buffer = buffer,
-  callback = function()
-    vim.lsp.buf.format { async = false }
+  pattern = "*",
+  callback = function(args)
+    if format_on_save then
+      require("conform").format({
+        bufnr = args.buf,
+        timeout_ms = 500,
+        lsp_format = "fallback",
+      })
+    end
   end
 })
+
+vim.api.nvim_create_user_command("ToggleFormatOnSave", toggle_format_on_save, {})
