@@ -44,18 +44,41 @@ return {
 
   {
     "hedyhli/outline.nvim",
-    lazy = true,
     cmd = { "Outline", "OutlineOpen" },
-    keys = { -- Example mapping to toggle outline
+    keys = {
       { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
     },
     opts = {
-      -- Your setup opts here
     },
   },
 
   {
     "folke/which-key.nvim",
     lazy = false,
+  },
+
+  {
+    "NeogitOrg/neogit",
+    keys = {
+      { "<leader>gg", "<cmd>Neogit<CR>", desc = "Open Neogit" },
+    },
+    config = function()
+      require("neogit").setup({
+        integrations = {
+          diffview = false,
+        },
+        mappings = {
+          popup = {
+            ["d"] = false,
+          }
+        }
+      })
+      dofile(vim.g.base46_cache .. "git")
+      dofile(vim.g.base46_cache .. "neogit")
+    end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
   },
 }

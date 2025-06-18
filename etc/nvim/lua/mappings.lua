@@ -9,4 +9,4 @@ local map = vim.keymap.set
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
-map('n', '<leader>bd', ':%bd!|e#|bd#<cr>|\'"<cr>', opts)
+map('n', '<leader>bd', '<cmd>%bd!|e#|bd#<cr>|\'"<cr>')

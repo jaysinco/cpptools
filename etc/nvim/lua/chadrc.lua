@@ -8,6 +8,9 @@ local M = {}
 M.base46 = {
 	theme = "vscode_dark",
 	theme_toggle = { "vscode_dark", "solarized_light" },
+	integrations = {
+		"neogit"
+	},
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
