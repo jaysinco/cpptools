@@ -26,6 +26,8 @@ return {
         "cpp",
         "bash",
         "cmake",
+        "python",
+        "cuda",
       },
     },
   },
