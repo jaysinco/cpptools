@@ -46,7 +46,7 @@ return {
     "hedyhli/outline.nvim",
     cmd = { "Outline", "OutlineOpen" },
     keys = {
-      { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+      { "<leader>o", "<cmd>Outline<CR>", desc = "toggle outline" },
     },
     opts = {
     },
@@ -63,8 +63,8 @@ return {
     keys = function()
       local cinnamon = require("cinnamon")  -- Cache locally
       return {
-        { "<C-U>", function() cinnamon.scroll("<C-U>zz") end, desc = "Centered scrolling up", mode = { "n" } },
-        { "<C-D>", function() cinnamon.scroll("<C-D>zz") end, desc = "Centered scrolling down" , mode = { "n" } },
+        { "<C-U>", function() cinnamon.scroll("<C-U>zz") end, desc = "centered scrolling up", mode = { "n" } },
+        { "<C-D>", function() cinnamon.scroll("<C-D>zz") end, desc = "centered scrolling down" , mode = { "n" } },
       }
     end,
     opts = {
@@ -82,7 +82,7 @@ return {
   {
     "NeogitOrg/neogit",
     keys = {
-      { "<leader>gg", "<cmd>Neogit<CR>", desc = "Open neogit" },
+      { "<leader>gg", "<cmd>Neogit<CR>", desc = "open neogit" },
     },
     config = function()
       require("neogit").setup({
