@@ -73,7 +73,7 @@ return {
           extra = false,
       },
       options = {
-        mode = "cursor",
+        mode = "window",
         delay = 8,
       },
     },

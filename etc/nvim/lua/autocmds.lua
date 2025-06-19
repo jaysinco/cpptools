@@ -23,6 +23,15 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
+-- quickfix window shortcut
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf",
+  callback = function()
+    vim.keymap.set("n", "q", "<cmd>close<CR><C-w>p", { buffer = true, silent = true })
+    vim.keymap.set("n", "o", "<CR><C-w>p", { buffer = true, silent = true })
+  end,
+})
+
 -- auto format on save
 local format_on_save = true
 
