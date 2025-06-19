@@ -7,7 +7,7 @@ local M = {}
 
 M.base46 = {
 	theme = "vscode_dark",
-	theme_toggle = { "vscode_dark", "solarized_light" },
+	theme_toggle = { "vscode_dark", "onedark" },
 	integrations = {
 		"neogit"
 	},
@@ -23,7 +23,7 @@ M.base46 = {
 M.ui = {
 	tabufline = {
 		lazyload = false
-	}
+	},
 }
 
 M.cheatsheet = {

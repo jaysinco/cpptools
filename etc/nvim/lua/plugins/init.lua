@@ -58,9 +58,31 @@ return {
   },
 
   {
+    "declancm/cinnamon.nvim",
+    version = "*", -- use latest release
+    keys = function()
+      local cinnamon = require("cinnamon")  -- Cache locally
+      return {
+        { "<C-U>", function() cinnamon.scroll("<C-U>zz") end, desc = "Centered scrolling up", mode = { "n" } },
+        { "<C-D>", function() cinnamon.scroll("<C-D>zz") end, desc = "Centered scrolling down" , mode = { "n" } },
+      }
+    end,
+    opts = {
+      keymaps = {
+          basic = false,
+          extra = false,
+      },
+      options = {
+        mode = "cursor",
+        delay = 8,
+      },
+    },
+  },
+
+  {
     "NeogitOrg/neogit",
     keys = {
-      { "<leader>gg", "<cmd>Neogit<CR>", desc = "Open Neogit" },
+      { "<leader>gg", "<cmd>Neogit<CR>", desc = "Open neogit" },
     },
     config = function()
       require("neogit").setup({
