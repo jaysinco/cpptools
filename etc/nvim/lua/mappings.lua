@@ -9,6 +9,9 @@ local map = vim.keymap.set
 
 map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+map('n', '<C-i>', '<C-i>', { noremap = true })  -- Force <C-i> to jump forward
+map('n', '<C-o>', '<C-o>', { noremap = true })  -- Force <C-o> to jump backward
+
 map('n', '<leader>X', function()
   local current = vim.api.nvim_get_current_buf()
   for _, buf in ipairs(vim.api.nvim_list_bufs()) do
