@@ -54,3 +54,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.api.nvim_create_user_command("ToggleFormatOnSave", toggle_format_on_save, {})
+
+-- hide buffers from buffer list and tabs
+vim.api.nvim_create_autocmd({ "BufNew", "BufWinEnter" }, {
+  callback = function(args)
+    local buftype = vim.api.nvim_buf_get_option(args.buf, "buftype")
+    if buftype:match("nofile") then
+      vim.api.nvim_buf_set_option(args.buf, "buflisted", false)
+    end
+  end,
+})

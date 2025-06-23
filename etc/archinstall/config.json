@@ -105,7 +105,8 @@
         "okular",
         "sqlitebrowser",
         "gnuplot",
-        "filezilla"
+        "filezilla",
+        "lua-language-server"
     ],
     "parallel downloads": 5,
     "profile_config": null,

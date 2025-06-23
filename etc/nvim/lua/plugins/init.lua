@@ -82,6 +82,17 @@ return {
   },
 
   {
+    'MagicDuck/grug-far.nvim',
+    keys = {
+      { "<leader>fr", "<cmd>GrugFar<CR>", desc = "find and replace" },
+    },
+    config = function()
+      require('grug-far').setup({
+      });
+    end
+  },
+
+  {
     "NeogitOrg/neogit",
     keys = {
       { "<leader>gg", "<cmd>Neogit<CR>", desc = "open neogit" },
