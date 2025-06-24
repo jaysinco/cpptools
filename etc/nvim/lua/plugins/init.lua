@@ -88,6 +88,14 @@ return {
     },
     config = function()
       require('grug-far').setup({
+        normalModeSearch = true,
+        startInInsertMode = false,
+        wrap = false,
+        resultsHighlight = false,
+        inputsHighlight = false,
+        resultLocation = {
+          showNumberLabel = false,
+        },
       });
     end
   },
