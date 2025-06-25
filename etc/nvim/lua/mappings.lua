@@ -13,6 +13,7 @@ map('n', '<C-i>', '<C-i>', { noremap = true })  -- force <C-i> to jump forward
 map('n', '<C-o>', '<C-o>', { noremap = true })  -- force <C-o> to jump backward
 map('x', 'y', 'ygv<Esc>', { noremap = true })   -- preserve cursor position
 map('x', 'p', '"_dP', { noremap = true })       -- preserve yank register
+map('n', 'q', '<Nop>', { noremap = true })      -- disable macro recording
 
 map('n', '<leader>X', function()
   local current = vim.api.nvim_get_current_buf()
@@ -24,3 +25,7 @@ map('n', '<leader>X', function()
   require("nvim-tree.api").tree.open({ focus = false })
   vim.cmd("wincmd l")
 end, { desc = "buffer only" })
+
+map('n', '<leader>q', '<cmd>qa<CR>', { noremap = true, desc = "close all buffers" })
+map('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
+map('n', '<C-w>c', '<C-w>c<C-w>p', { noremap = true })
