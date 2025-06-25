@@ -136,8 +136,8 @@ return {
       },
     },
     keys = {
-      { "s", mode = { "n" }, function() require("flash").jump() end, desc = "flash" },
-      { "S", mode = { "n" }, function() require("flash").treesitter() end, desc = "flash teesitter" },
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "flash" },
+      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "flash teesitter" },
     },
   },
 
