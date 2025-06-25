@@ -7,7 +7,7 @@ local M = {}
 
 M.base46 = {
 	theme = "vscode_dark",
-	theme_toggle = { "vscode_dark", "onedark" },
+	theme_toggle = { "vscode_dark", "everforest_light" },
 	integrations = {
 		"neogit"
 	},
