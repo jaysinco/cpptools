@@ -11,7 +11,8 @@ map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 map('n', '<C-i>', '<C-i>', { noremap = true })  -- force <C-i> to jump forward
 map('n', '<C-o>', '<C-o>', { noremap = true })  -- force <C-o> to jump backward
-map('x', 'y', 'ygv<Esc>', { noremap = true })   -- yank preserve cursor position
+map('x', 'y', 'ygv<Esc>', { noremap = true })   -- preserve cursor position
+map('x', 'p', '"_dP', { noremap = true })       -- preserve yank register
 
 map('n', '<leader>X', function()
   local current = vim.api.nvim_get_current_buf()
