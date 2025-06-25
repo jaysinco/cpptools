@@ -124,4 +124,21 @@ return {
       "nvim-telescope/telescope.nvim",
     },
   },
+
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {
+      modes = {
+        char = {
+          enabled = false,
+        },
+      },
+    },
+    keys = {
+      { "s", mode = { "n" }, function() require("flash").jump() end, desc = "flash" },
+      { "S", mode = { "n" }, function() require("flash").treesitter() end, desc = "flash teesitter" },
+    },
+  },
+
 }
