@@ -64,3 +64,12 @@ vim.api.nvim_create_autocmd({ "BufNew", "BufWinEnter" }, {
     end
   end,
 })
+
+-- disable automatic comment continuation
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove("r")  -- Don't auto-insert comment leader on Enter
+    vim.opt_local.formatoptions:remove("o")  -- Don't auto-insert comment leader with 'o' or 'O'
+  end
+})
