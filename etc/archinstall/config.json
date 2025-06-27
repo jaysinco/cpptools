@@ -106,8 +106,7 @@
         "sqlitebrowser",
         "gnuplot",
         "filezilla",
-        "lua-language-server",
-        "mangohud"
+        "lua-language-server"
     ],
     "parallel downloads": 5,
     "profile_config": null,
