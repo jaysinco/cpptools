@@ -1,6 +1,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "clangd", "pyright" }
+local servers = { "clangd", "pyright", "glsl_analyzer" }
 vim.lsp.enable(servers)
 
 vim.diagnostic.config {
