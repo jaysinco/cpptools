@@ -71,6 +71,8 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "sentencepiece"
         "gnuplot-iostream"
         "pegtl"
+        "vulkan-memory-allocator"
+        "assimp"
     )
 fi
 
