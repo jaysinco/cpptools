@@ -89,6 +89,20 @@ if [ ! -f "$HOME/.config/clash/config.yaml" ]; then
     cp -rf $src_dir/Country.mmdb $HOME/.config/clash/
 fi
 
+if [ ! -f "/usr/bin/ct-ng" ]; then
+    echo "-- install crosstool-ng"
+    unzip -q $src_dir/crosstool-ng-master.zip -d $HOME
+    pushd $HOME/crosstool-ng-master
+    ./bootstrap \
+    && ./configure \
+        --prefix=/usr \
+        --libexecdir=/usr/lib \
+        --with-ncurses \
+    && make && sudo make install
+    popd
+    rm -rf $HOME/crosstool-ng-master
+fi
+
 if [[ ! -d "$HOME/opt/flutter" ]]; then
     echo "-- install flutter"
     tar xf $src_dir/flutter_linux_3.27.1-stable.tar.xz --directory=$HOME/opt

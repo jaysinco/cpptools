@@ -98,7 +98,6 @@
         "bat",
         "tcl",
         "extra-cmake-modules",
-        "crosstool-ng",
         "wayland-protocols",
         "sway",
         "waybar",
