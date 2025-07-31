@@ -64,8 +64,10 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         # "dcmtk"
         "tinyxml2"
         "ffmpeg"
+        # "openexr"
         "opencv"
         "xxd"
+        # "wlroots"
         "ftxui"
         "gperftools"
         "sentencepiece"
@@ -73,6 +75,8 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "pegtl"
         "vulkan-memory-allocator"
         "assimp"
+        "glm"
+        "easy-profiler"
     )
 fi
 

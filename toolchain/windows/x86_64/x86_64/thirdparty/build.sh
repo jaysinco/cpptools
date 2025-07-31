@@ -55,6 +55,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "yaml-cpp"
         "leveldb"
         "tinyxml2"
+        # "openexr"
         "opencv"
         "xxd"
         "sentencepiece"
