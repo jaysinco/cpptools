@@ -3,7 +3,8 @@
 set -e
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-git_root="$(git rev-parse --show-toplevel)"
+# git_root="$(git rev-parse --show-toplevel)"
+git_root=$script_dir/../../../
 etc_dir=$git_root/etc
 src_dir=$git_root/src
 
