@@ -39,6 +39,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DBUILD_SHARED_LIBS=ON \
     -Dzlib=ON \
     -Djpeg=ON \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 && \
 cmake --build . --parallel=`nproc` \
 && \

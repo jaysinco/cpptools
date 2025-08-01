@@ -36,6 +36,7 @@ cmake ../src/xxd-main -G "Unix Makefiles" \
     -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 && \
 cmake --build . --parallel=`nproc` \
 && \

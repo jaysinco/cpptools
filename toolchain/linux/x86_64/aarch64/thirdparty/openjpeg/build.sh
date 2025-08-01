@@ -36,6 +36,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
     -DBUILD_SHARED_LIBS=ON \
     -DBUILD_CODEC=OFF \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 && \
 cmake --build . --parallel=`nproc` \
 && \

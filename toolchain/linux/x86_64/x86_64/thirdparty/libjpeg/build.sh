@@ -46,6 +46,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DWITH_TURBOJPEG=ON \
     -DWITH_JAVA=OFF \
     -DWITH_12BIT=OFF \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 && \
 cmake --build . --parallel=`nproc` \
 && \

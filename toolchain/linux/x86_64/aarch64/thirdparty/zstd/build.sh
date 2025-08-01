@@ -40,6 +40,7 @@ cmake ../src/$SOURCE_DIR/build/cmake -G "Unix Makefiles" \
     -DZSTD_BUILD_SHARED=ON \
     -DZSTD_BUILD_STATIC=OFF \
     -DZSTD_MULTITHREAD_SUPPORT=ON \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 && \
 cmake --build . --parallel=`nproc` \
 && \

@@ -39,6 +39,7 @@ cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
     -DBUILD_SHARED_LIBS=ON \
     -DBUILD_TESTING=OFF \
     -DBUILD_EXAMPLES=OFF \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 && \
 cmake --build . --parallel=`nproc` \
 && \
