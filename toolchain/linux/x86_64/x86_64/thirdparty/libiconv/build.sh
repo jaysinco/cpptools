@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=libiconv-1.16
+SOURCE_DIR=libiconv-1.18
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src

@@ -25,6 +25,8 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
+export CXXFLAGS="-include cstdint"
+
 mkdir -p $SCRIPT_DIR/out \
 && \
 pushd $SCRIPT_DIR/out \
