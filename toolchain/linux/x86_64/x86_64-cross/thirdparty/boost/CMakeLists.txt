@@ -11,4 +11,7 @@ target_link_libraries(${TARGET_NAME} INTERFACE
     ${TC_INSTALL_DIR}/lib/libboost_timer.so
     ${TC_INSTALL_DIR}/lib/libboost_chrono.so
     ${TC_INSTALL_DIR}/lib/libboost_iostreams.so
+    ${TC_INSTALL_DIR}/lib/libboost_system.so
+    ${TC_INSTALL_DIR}/lib/libboost_filesystem.so
+    ${TC_INSTALL_DIR}/lib/libboost_atomic.so
 )

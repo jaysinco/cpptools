@@ -13,7 +13,7 @@ done
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 source $TC_TOOLCHAIN_DIR/env.sh
-SOURCE_DIR=sentencepiece-0.2.0
+SOURCE_DIR=gperftools-gperftools-2.16
 
 if [ $do_clean -eq 1 ]; then
     rm -rf $SCRIPT_DIR/src
@@ -25,20 +25,18 @@ if [ ! -d $SCRIPT_DIR/src/$SOURCE_DIR ]; then
     tar -xzf $TC_SOURCE_REPO/$SOURCE_DIR.tar.gz -C $SCRIPT_DIR/src
 fi
 
-export CXXFLAGS="-include cstdint"
-
-mkdir -p $SCRIPT_DIR/out \
+pushd $SCRIPT_DIR/src/$SOURCE_DIR \
 && \
-pushd $SCRIPT_DIR/out \
+autoreconf -i \
 && \
-cmake ../src/$SOURCE_DIR -G "Unix Makefiles" \
-    -DCMAKE_TOOLCHAIN_FILE=$TC_CMAKE_TOOLCHAIN \
-    -DCMAKE_INSTALL_PREFIX=$TC_INSTALL_DIR \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-    -DBUILD_SHARED_LIBS=ON \
-    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+./configure \
+    --with-sysroot=$TC_SYSROOT \
+    --prefix $TC_INSTALL_DIR \
+    --host=$TC_COMPILER_TUPLE \
+    --build=$TC_HOST_COMPILER_TUPLE \
+    --enable-shared \
+    --disable-static \
 && \
-cmake --build . --parallel=`nproc` \
+make -j`nproc` \
 && \
-cmake --install .
+make install

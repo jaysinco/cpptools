@@ -119,6 +119,17 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         # "weston"
         "json-c"
         "drm-info"
+        "gperftools"
+        "sentencepiece"
+        "gnuplot-iostream"
+        "pegtl"
+        "vulkan-headers"
+        "vulkan-loader"
+        "vulkan-memory-allocator"
+        "minizip"
+        "assimp"
+        "glm"
+        "easy-profiler"
     )
 fi
 
