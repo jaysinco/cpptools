@@ -9,4 +9,4 @@ vim.o.expandtab = true -- Use spaces instead of tabs
 vim.o.fixeol = false -- does not add a final newline
 vim.o.winborder = "single"
 vim.o.wrap = false
-vim.o.relativenumber = true
+vim.o.relativenumber = false
