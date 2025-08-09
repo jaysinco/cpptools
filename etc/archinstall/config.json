@@ -99,6 +99,7 @@
         "tcl",
         "extra-cmake-modules",
         "wayland-protocols",
+        "vulkan-validation-layers",
         "vulkan-icd-loader",
         "vulkan-headers",
         "vulkan-swrast",
