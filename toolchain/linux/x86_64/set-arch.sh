@@ -117,7 +117,6 @@ function clone_repo() {
         && git init \
         && git remote add origin git@gitee.com:$2 \
         && git remote set-url --add --push origin git@gitee.com:$2 \
-        && git remote set-url --add --push origin git@e.coding.net:g-twcb9051/$2 \
         && git remote set-url --add --push origin git@github.com:$2 \
         && git fetch \
         && git checkout $3 -b $4
