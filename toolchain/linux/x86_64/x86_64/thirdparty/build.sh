@@ -78,6 +78,7 @@ if [ ${#do_pkg_list[@]} -eq 0 ]; then
         "assimp"
         "glm"
         "easy-profiler"
+        "parallel-hashmap"
     )
 fi
 
